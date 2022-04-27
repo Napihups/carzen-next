@@ -1,11 +1,13 @@
 import type { NextPage } from "next";
+import { Default } from "@layout/Default/Default";
+import { LandingTemplate } from "@template/LandingTemplate";
 
-const Home: NextPage = () => {
+const Landing: NextPage = () => {
   return (
-    <div>
-      <h1>Hello</h1>
-    </div>
+    <Default>
+      <LandingTemplate />
+    </Default>
   );
 };
 
-export default Home;
+export default Landing;

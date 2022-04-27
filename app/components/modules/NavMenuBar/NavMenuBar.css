@@ -1,0 +1,17 @@
+.czNavMenu {
+  @apply flex 
+  flex-row 
+  h-full w-auto 
+  items-center;
+}
+
+.czNavMenu__menuItem {
+  @apply mr-6 
+  transition-all
+  text-sm 
+  hover:text-primary-600;
+}
+
+.czNavMenu__menuItem.active {
+  @apply font-bold text-primary-600;
+}

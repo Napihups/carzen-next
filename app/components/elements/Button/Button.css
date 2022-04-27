@@ -1,0 +1,46 @@
+.czButton {
+  @apply flex
+  flex-row
+  w-auto
+  items-center
+  justify-center
+  rounded
+  bg-base
+  cursor-pointer
+  transition;
+}
+
+.czButton.bar {
+  @apply w-full;
+}
+
+.czButton--md {
+  @apply py-2 px-6;
+}
+.czButton--sm {
+  @apply py-2 px-4;
+}
+
+.czButton-var--primary {
+  @apply bg-base text-white hover:bg-primary-700;
+}
+
+.czButton-var--link-black {
+  @apply bg-transparent text-black hover:text-base;
+}
+
+.czButton__text--sm {
+  @apply text-sm;
+}
+
+.czButton__text--md {
+  /** text-base cannot be used here due to conflict with the text-base color */
+}
+
+.czButton__text--primary {
+  @apply text-white;
+}
+
+.czButton__text--link-black {
+  @apply text-black;
+}
