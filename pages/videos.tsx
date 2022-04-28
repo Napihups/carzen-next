@@ -9,4 +9,14 @@ const Videos: NextPage = () => {
   );
 };
 
+/**
+ *
+ * @returns
+ */
+export async function getServerSideProps() {
+  await new Promise((resolve) => {
+    setTimeout(resolve, 2000);
+  });
+  return { props: {} };
+}
 export default Videos;

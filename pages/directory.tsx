@@ -9,4 +9,15 @@ const Directory: NextPage = () => {
   );
 };
 
+/**
+ *
+ * @returns
+ */
+export async function getServerSideProps() {
+  await new Promise((resolve) => {
+    setTimeout(resolve, 500);
+  });
+  return { props: {} };
+}
+
 export default Directory;
