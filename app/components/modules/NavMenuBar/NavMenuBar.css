@@ -2,16 +2,53 @@
   @apply flex 
   flex-row 
   h-full w-auto 
-  items-center;
+  items-center
+  ml-[-16px];
 }
 
 .czNavMenu__menuItem {
-  @apply mr-6 
-  transition-all
+  @apply flex
+  flex-row
+  items-center
+  mr-0
+  px-4
   text-sm 
-  hover:text-primary-600;
+  h-full
+  font-bold
+  text-gray-500
+  relative cursor-pointer;
 }
 
 .czNavMenu__menuItem.active {
-  @apply font-bold text-primary-600;
+  @apply bg-base text-white;
+}
+.czNavMenu__menuItem.active:after {
+  @apply absolute 
+  bottom-0
+  left-0
+  right-0
+  m-auto
+  w-full
+  text-transparent
+  bg-base
+  h-[2px];
+  content: ".";
+}
+
+.czNavMenu__menuItem:after {
+  @apply absolute 
+  bottom-0
+  left-0
+  right-0
+  m-auto
+  w-0
+  text-transparent
+  bg-base
+  h-[2px];
+  content: ".";
+}
+
+.czNavMenu__menuItem:hover:after {
+  @apply w-full;
+  animation: fill 1s forwards;
 }

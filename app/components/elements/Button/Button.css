@@ -6,8 +6,7 @@
   justify-center
   rounded
   bg-base
-  cursor-pointer
-  transition;
+  cursor-pointer;
 }
 
 .czButton.bar {
