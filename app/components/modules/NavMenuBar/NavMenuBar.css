@@ -52,3 +52,11 @@
   @apply w-full;
   animation: fill 1s forwards;
 }
+
+.czNavMenu__item-wrapper {
+  @apply flex-row h-full items-center hidden tablet:hidden laptop:flex;
+}
+
+.czNavMenu__more-items-toggler {
+  @apply flex h-full laptop:hidden;
+}

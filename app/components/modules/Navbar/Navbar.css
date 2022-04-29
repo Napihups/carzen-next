@@ -1,37 +1,51 @@
 .navbar {
   @apply bg-white 
   shadow-lg 
-  h-[90px] px-[10px] 
-  sm:px-[20px] 
-  lg:px-[20px] 
-  xl:px-[150px];
+  mx-auto
+  h-[50px] 
+  w-full
+  tablet:h-[90px];
 }
-.content {
-  @apply flex 
-  flex-col
-  w-full 
-  h-full;
-}
-.navbar-top {
-  @apply flex 
-  flex-row 
+
+.navbar__top {
+  @apply flex
+  flex-row  
   w-full 
   h-[50px] 
   items-center 
+  justify-center
   border-b-[1px] 
   border-b-gray-200;
 }
-.auth-nav {
-  @apply flex flex-row w-auto h-full ml-auto items-center;
+
+.navbar__logo-box {
+  @apply mr-auto;
+}
+
+.navbar__auth-control {
+  @apply flex-row 
+  w-auto 
+  h-full 
+  ml-auto 
+  items-center
+  hidden 
+  laptop:flex;
+}
+
+.navbar__bottom-menu {
+  @apply flex-row 
+  w-full 
+  hidden
+  h-[40px]
+  items-center 
+  justify-start
+  tablet:flex;
 }
 
 .login-button {
   @apply flex flex-row w-[120px];
 }
 
-.navbar-bottom-menu {
-  @apply flex 
-  flex-row 
-  w-full 
-  h-[40px];
+.navbar__hamburger-menu {
+  @apply mr-auto laptop:hidden;
 }

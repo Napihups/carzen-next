@@ -222,6 +222,16 @@
 /** Import Module Css */
 @import "../components/modules/Navbar/Navbar.css";
 @import "../components/modules/NavMenuBar/NavMenuBar.css";
+@import "../components/modules/NavHamBurgerMenu/NavHamBurgerMenu.css";
 
 /** Import Elements Css */
 @import "../components/elements/Button/Button.css";
+
+/** global classes */
+.czContainer {
+  @apply container
+  w-full 
+  h-full
+  px-4
+  mx-auto;
+}

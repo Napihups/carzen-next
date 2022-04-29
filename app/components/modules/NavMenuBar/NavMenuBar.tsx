@@ -3,6 +3,7 @@ import React from "react";
 import { fixtures } from "@constant/fixtures";
 import { useRouter } from "next/router";
 import { pathNames } from "@constant/router-config";
+import { IoEllipsisHorizontal } from "react-icons/io5";
 
 /**
  *
@@ -43,29 +44,36 @@ export const NavMenuBar: React.FC = () => {
         </li>
       </Link>
 
-      <Link passHref href={pathNames.directory}>
-        <li className={`czNavMenu__menuItem ${_setItemActiveClass(router.pathname, pathNames.directory)}`}>
-          {fixtures.nav_menu.directory}
-        </li>
-      </Link>
+      <div className="czNavMenu__item-wrapper">
+        <Link passHref href={pathNames.directory}>
+          <li className={`czNavMenu__menuItem ${_setItemActiveClass(router.pathname, pathNames.directory)}`}>
+            {fixtures.nav_menu.directory}
+          </li>
+        </Link>
+        <Link passHref href={pathNames.product}>
+          <li className={`czNavMenu__menuItem ${_setItemActiveClass(router.pathname, pathNames.product)}`}>
+            {fixtures.nav_menu.product}
+          </li>
+        </Link>
+        <Link passHref href={pathNames.car_videos}>
+          <li className={`czNavMenu__menuItem ${_setItemActiveClass(router.pathname, pathNames.car_videos)}`}>
+            {fixtures.nav_menu.car_videos}
+          </li>
+        </Link>
+        <Link passHref href={pathNames.articles}>
+          <li className={`czNavMenu__menuItem ${_setItemActiveClass(router.pathname, pathNames.articles)}`}>
+            {fixtures.nav_menu.articles}
+          </li>
+        </Link>
+      </div>
 
-      <Link passHref href={pathNames.product}>
-        <li className={`czNavMenu__menuItem ${_setItemActiveClass(router.pathname, pathNames.product)}`}>
-          {fixtures.nav_menu.product}
-        </li>
-      </Link>
-
-      <Link passHref href={pathNames.articles}>
-        <li className={`czNavMenu__menuItem ${_setItemActiveClass(router.pathname, pathNames.articles)}`}>
-          {fixtures.nav_menu.articles}
-        </li>
-      </Link>
-
-      <Link passHref href={pathNames.car_videos}>
-        <li className={`czNavMenu__menuItem ${_setItemActiveClass(router.pathname, pathNames.car_videos)}`}>
-          {fixtures.nav_menu.car_videos}
-        </li>
-      </Link>
+      <div className="czNavMenu__more-items-toggler">
+        <Link passHref href={pathNames.articles}>
+          <li className={`czNavMenu__menuItem ${_setItemActiveClass(router.pathname, pathNames.articles)}`}>
+            <IoEllipsisHorizontal size={"20px"} />
+          </li>
+        </Link>
+      </div>
     </ul>
   );
 };

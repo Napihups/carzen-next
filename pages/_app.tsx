@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <BarLoader isRouteChanging={state.isRouteChanging} key={state.loadingKey} />
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </>
   );
 }
