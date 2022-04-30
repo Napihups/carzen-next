@@ -6,7 +6,7 @@
   justify-center
   rounded
   bg-base
-  cursor-pointer;
+  cursor-pointer border-[1px] border-transparent;
 }
 
 .czButton.bar {
@@ -26,6 +26,18 @@
 
 .czButton-var--link-black {
   @apply bg-transparent text-black hover:text-base;
+}
+
+.czButton-var--outline-white {
+  @apply bg-transparent text-white border-[1px] border-white  hover:opacity-90;
+}
+
+.czButton-var--white {
+  @apply bg-white text-gray-900 hover:opacity-90;
+}
+
+.czButton-var--link-white {
+  @apply bg-transparent text-white hover:opacity-90;
 }
 
 .czButton__text--sm {

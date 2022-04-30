@@ -2,15 +2,15 @@ import React from "react";
 import { Logo } from "@element/Logo";
 import { AuthControlPanel } from "./AuthControlPanel";
 import { NavMenuBar } from "@module/NavMenuBar/NavMenuBar";
-import { NavHamburgerMenu } from "@module/NavHamburgerMenu/NavHamburgerMenu";
+import { NavDrawer } from "@module/NavDrawer/NavDrawer";
 
 export const Navbar: React.FC = () => {
   return (
     <div className="navbar">
       <div className="czContainer">
         <div className="navbar__top">
-          <div className="navbar__hamburger-menu">
-            <NavHamburgerMenu />
+          <div className="navbar__navDrawer">
+            <NavDrawer />
           </div>
           <div className="navbar__logo-box">
             <Logo />

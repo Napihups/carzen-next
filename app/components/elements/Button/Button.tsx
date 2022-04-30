@@ -1,7 +1,15 @@
 import React, { ButtonHTMLAttributes } from "react";
 
 /** */
-type BtnVariant = "primary" | "outline-primary" | "outline-white" | "black" | "link-black" | "link-primary";
+type BtnVariant =
+  | "primary"
+  | "white"
+  | "outline-primary"
+  | "outline-white"
+  | "link-white"
+  | "black"
+  | "link-black"
+  | "link-primary";
 type BtnSize = "tiny" | "sm" | "md" | "lg" | "xl";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

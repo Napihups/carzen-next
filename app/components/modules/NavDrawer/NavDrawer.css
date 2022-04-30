@@ -1,0 +1,77 @@
+.czNavDrawer__backdrop {
+  @apply fixed
+  w-full
+  h-full
+  left-0
+  right-0
+  top-0
+  bottom-0
+  z-50
+  bg-gray-900
+  opacity-50
+  hidden;
+}
+
+.czNavDrawer__backdrop--show {
+  @apply flex;
+}
+.czNavDrawer__drawer {
+  @apply fixed
+  left-0
+  right-0
+  top-0
+  bottom-0
+  w-[296px]
+  h-screen
+  bg-base
+  z-50
+  flex
+  flex-col items-start box-content;
+}
+.czNavDrawer__toggler {
+  @apply flex 
+  flex-row 
+  items-center
+  justify-center 
+  text-gray-900 
+  hover:text-base;
+}
+
+.czNavDrawer__header {
+  @apply flex flex-row 
+  items-center 
+  justify-between 
+  h-[50px]  
+  w-full 
+  px-4 
+  text-white;
+}
+.czNavDrawer__title {
+  @apply font-bold text-white;
+}
+
+.czNavDrawer__authControl {
+  @apply grid 
+  grid-cols-2 
+  gap-4
+  items-center
+  w-full 
+  px-4
+  h-[50px];
+}
+
+.czNavDrawer__divider {
+  @apply flex 
+  flex-row
+  p-4
+  w-full
+  relative;
+}
+.czNavDrawer__divider span {
+  @apply flex 
+  flex-row
+  h-[1px]
+  w-full
+  relative
+  bg-white;
+}
