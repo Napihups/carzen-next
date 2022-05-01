@@ -60,3 +60,36 @@
 .czNavMenu__more-items-toggler {
   @apply flex h-full laptop:hidden;
 }
+
+.czNavMenuExtendedDropdown {
+  @apply relative text-left flex h-full laptop:hidden;
+}
+.czNavMenuExtendedDropdown__dropdown {
+  @apply flex flex-col
+  focus:outline-none 
+  absolute 
+  right-0 
+  top-[40px] 
+  w-56 
+  origin-bottom-right 
+  divide-y 
+  divide-gray-100 
+  rounded-b
+  bg-white 
+  shadow-lg 
+  ring-1 
+  ring-black 
+  ring-opacity-5;
+}
+.czNavMenuExtendedDropdown__item {
+  @apply flex
+  flex-row
+  p-3 
+  cursor-pointer
+  font-bold
+  text-sm;
+}
+
+.czNavMenuExtendedDropdown__item.active {
+  @apply text-base text-sm;
+}

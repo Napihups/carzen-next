@@ -26,7 +26,9 @@
   bg-base
   z-50
   flex
-  flex-col items-start box-content;
+  flex-col 
+  items-start
+  box-content;
 }
 .czNavDrawer__toggler {
   @apply flex 
@@ -74,4 +76,25 @@
   w-full
   relative
   bg-white;
+}
+
+.czDrawerNavMenu {
+  @apply list-none 
+  flex 
+  flex-col
+  items-start
+  justify-start w-full;
+}
+
+.czDrawerNavMenu__menuItem {
+  @apply flex 
+  flex-row 
+  w-full 
+  text-white 
+  p-4 
+  cursor-pointer 
+  hover:opacity-70
+  border-b-[1px]
+  border-b-white 
+  border-opacity-40;
 }

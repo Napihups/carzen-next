@@ -4,6 +4,7 @@ import { fixtures } from "@constant/fixtures";
 import { useRouter } from "next/router";
 import { pathNames } from "@constant/router-config";
 import { IoEllipsisHorizontal } from "react-icons/io5";
+import { NavMenuExtendedDropdown } from "./NavMenuExtendedDropdown";
 
 /**
  *
@@ -66,14 +67,7 @@ export const NavMenuBar: React.FC = () => {
           </li>
         </Link>
       </div>
-
-      <div className="czNavMenu__more-items-toggler">
-        <Link passHref href={pathNames.articles}>
-          <li className={`czNavMenu__menuItem ${_setItemActiveClass(router.pathname, pathNames.articles)}`}>
-            <IoEllipsisHorizontal size={"20px"} />
-          </li>
-        </Link>
-      </div>
+      <NavMenuExtendedDropdown />
     </ul>
   );
 };
