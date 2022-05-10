@@ -27,7 +27,7 @@
       "@api/*": ["api/*"],
       "@lib/*": ["lib/*"],
       "@types/*": ["types/*"],
-      "@redux/*": ["redux/*"]
+      "@redux/*": ["redux/*"],
     },
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

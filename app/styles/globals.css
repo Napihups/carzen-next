@@ -211,8 +211,13 @@
       /* Safari, Android, iOS */ url("../assets/fonts/mulish-v10-latin-900italic.svg#Mulish") format("svg"); /* Legacy iOS */
   }
 
+  html {
+    padding: 0;
+    margin: 0;
+  }
   body {
     font-family: Mulish;
+    padding: 0;
   }
 }
 
@@ -223,6 +228,7 @@
 @import "../components/modules/Navbar/Navbar.css";
 @import "../components/modules/NavMenuBar/NavMenuBar.css";
 @import "../components/modules/NavDrawer/NavDrawer.css";
+@import "../components/modules/MainBanner/MainBanner.css";
 
 /** Import Elements Css */
 @import "../components/elements/Button/Button.css";
@@ -230,6 +236,7 @@
 /** global classes */
 .czContainer {
   @apply container
+  relative
   w-full 
   h-full
   px-4

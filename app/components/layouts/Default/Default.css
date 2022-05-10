@@ -1,3 +1,10 @@
-.layout-default {
-  @apply flex flex-col w-full h-auto;
+.layoutDefault {
+  @apply flex 
+  flex-col 
+  w-full 
+  h-auto;
+}
+
+.czContent {
+  @apply py-4;
 }

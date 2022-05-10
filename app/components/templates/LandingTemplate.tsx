@@ -1,5 +1,6 @@
 import React from "react";
+import { MainBanner } from "@module/MainBanner/MainBanner";
 
 export const LandingTemplate: React.FC = () => {
-  return <h1 className="text-4xl font-black">Landing Template Content</h1>;
+  return <MainBanner />;
 };
