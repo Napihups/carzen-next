@@ -7,7 +7,7 @@ type BtnVariant =
   | "outline-primary"
   | "outline-white"
   | "link-white"
-  | "black"
+  | "dark"
   | "link-black"
   | "link-primary";
 type BtnSize = "tiny" | "sm" | "md" | "lg" | "xl";

@@ -1,0 +1,16 @@
+.searchFormTab {
+  @apply flex 
+  flex-col 
+  tablet:flex-row
+  tablet:w-auto
+  w-full
+  h-auto
+  justify-between gap-2;
+}
+
+.searchFormTab__heading {
+  @apply text-xl 
+  laptop:text-2xl 
+  font-extrabold 
+  text-white mr-4;
+}

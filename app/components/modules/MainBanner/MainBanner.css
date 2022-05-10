@@ -1,5 +1,12 @@
 .mainBanner {
-  @apply block w-full h-[400px] bg-base rounded overflow-hidden;
+  @apply block 
+  w-full 
+  h-[400px] 
+  bg-base 
+  rounded 
+  overflow-hidden
+  px-8
+  py-4;
 }
 
 .mainBanner__blob {
@@ -18,4 +25,11 @@
   desktop:scale-100
   desktop:right-[20px]
   desktop:top-[140px];
+}
+
+.mainBanner__searchform {
+  @apply flex 
+  flex-row 
+  w-auto
+  h-auto;
 }

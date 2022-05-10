@@ -229,6 +229,7 @@
 @import "../components/modules/NavMenuBar/NavMenuBar.css";
 @import "../components/modules/NavDrawer/NavDrawer.css";
 @import "../components/modules/MainBanner/MainBanner.css";
+@import "../components/modules/SearchFormTab/SearchFormTab.css";
 
 /** Import Elements Css */
 @import "../components/elements/Button/Button.css";

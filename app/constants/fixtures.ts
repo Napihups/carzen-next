@@ -9,4 +9,13 @@ export const fixtures = {
     articles: "Articles",
     car_videos: "Car Videos",
   },
+  search_form: {
+    heading: "Find your next car",
+    main_filters: {
+      new: "New",
+      used: "Used",
+      subs: "Subscriptions",
+      all: "All",
+    },
+  },
 };
