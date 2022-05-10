@@ -1,6 +1,6 @@
 import { fixtures } from "@constant/fixtures";
 import { Button } from "@element/Button/Button";
-import { SearchFilterType } from "@czTypes/search-form";
+import { SearchFilterType } from "@czTypes/search-form.type";
 import React, { useState } from "react";
 
 const _setVariant = (active: SearchFilterType, item: SearchFilterType) => {
