@@ -18,7 +18,7 @@ export const fixtures = {
       all: "All",
     },
     input_placeholders: {
-      car_modal: "Enter Car make / model",
+      car_modal: "Enter Car Make / Model",
       brand: "Brand",
       price_range: "Price Range",
       monthly_inst: "Monthly Installment",

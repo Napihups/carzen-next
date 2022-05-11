@@ -9,7 +9,7 @@ export const SearchForm: React.FC = () => {
         className="searchForm__searchInput"
         withFocus={false}
         placeholder={fixtures.search_form.input_placeholders.car_modal}
-        type={"text"}
+        type="text"
       />
     </div>
   );

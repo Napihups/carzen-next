@@ -1,10 +1,17 @@
+.czTextFieldBase {
+  @apply flex
+   w-auto 
+   h-auto 
+   relative   
+   mr-2;
+}
 .czTextField {
   @apply text-sm
 text-gray-700
   px-2
   py-2
   rounded 
-  mr-2 
+  w-full
   border-[1px]
 border-white
   focus:border-base;
