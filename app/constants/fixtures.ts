@@ -17,5 +17,12 @@ export const fixtures = {
       subs: "Subscriptions",
       all: "All",
     },
+    input_placeholders: {
+      car_modal: "Enter Car make / model",
+      brand: "Brand",
+      price_range: "Price Range",
+      monthly_inst: "Monthly Installment",
+      category: "Category",
+    },
   },
 };

@@ -1,0 +1,11 @@
+.searchForm {
+  @apply flex 
+  flex-col 
+  h-auto
+  w-full 
+  py-4;
+}
+
+.searchForm__searchInput {
+  @apply w-full max-w-[800px];
+}

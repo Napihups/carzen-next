@@ -1,0 +1,26 @@
+.czTextField {
+  @apply text-sm
+text-gray-700
+  px-2
+  py-2
+  rounded 
+  mr-2 
+  border-[1px]
+border-white
+  focus:border-base;
+}
+
+.czTextField--sm {
+  @apply text-sm;
+}
+.czTextField--md {
+  @apply text-base text-gray-700;
+}
+.czTextField--lg {
+  @apply text-lg;
+}
+
+.wo-focus {
+  @apply focus:border-[1px]
+  focus:border-white;
+}

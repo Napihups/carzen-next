@@ -1,6 +1,7 @@
 import React from "react";
 import { BannerCarBlob } from "@element/BannerCarBlob/BannerCarBlob";
 import { SearchFormTab } from "@module/SearchFormTab/SearchFormTab";
+import { SearchForm } from "@module/SearchForm/SearchForm";
 
 export const MainBanner: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ export const MainBanner: React.FC = () => {
       </div>
       <div className="mainBanner__searchform">
         <SearchFormTab />
+        <SearchForm />
       </div>
     </div>
   );

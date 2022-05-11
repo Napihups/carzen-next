@@ -1,7 +1,7 @@
 .mainBanner {
   @apply block 
   w-full 
-  h-[400px] 
+  min-h-[400px]
   bg-base 
   rounded 
   overflow-hidden
@@ -14,11 +14,7 @@
   flex
   scale-50
   right-[-120px]
-  top-[200px]
-  tablet:flex
-  tablet:top-[190px]
-  tablet:scale-75
-  tablet:right-[-90px]
+  bottom-[-150px]
   laptop:scale-90
   laptop:right-[0px]
   laptop:top-[150px]
@@ -29,7 +25,7 @@
 
 .mainBanner__searchform {
   @apply flex 
-  flex-row 
+  flex-col 
   w-auto
   h-auto;
 }

@@ -219,6 +219,11 @@
     font-family: Mulish;
     padding: 0;
   }
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+  }
 }
 
 /** Import Layout Css */
@@ -230,9 +235,11 @@
 @import "../components/modules/NavDrawer/NavDrawer.css";
 @import "../components/modules/MainBanner/MainBanner.css";
 @import "../components/modules/SearchFormTab/SearchFormTab.css";
+@import "../components/modules/SearchForm/SearchForm.css";
 
 /** Import Elements Css */
 @import "../components/elements/Button/Button.css";
+@import "../components/elements/TextField/TextField.css";
 
 /** global classes */
 .czContainer {

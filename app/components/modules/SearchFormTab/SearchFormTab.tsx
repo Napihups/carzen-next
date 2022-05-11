@@ -16,7 +16,7 @@ export const SearchFormTab: React.FC = () => {
       <Button
         variant={_setVariant(activeTab, SearchFilterType.NEW)}
         text={fixtures.search_form.main_filters.new}
-        size="sm"
+        size="md"
         onClick={() => {
           setActiveTab(SearchFilterType.NEW);
         }}
@@ -24,7 +24,7 @@ export const SearchFormTab: React.FC = () => {
       <Button
         variant={_setVariant(activeTab, SearchFilterType.USED)}
         text={fixtures.search_form.main_filters.used}
-        size="sm"
+        size="md"
         onClick={() => {
           setActiveTab(SearchFilterType.USED);
         }}
@@ -32,7 +32,7 @@ export const SearchFormTab: React.FC = () => {
       <Button
         variant={_setVariant(activeTab, SearchFilterType.SUBS)}
         text={fixtures.search_form.main_filters.subs}
-        size="sm"
+        size="md"
         onClick={() => {
           setActiveTab(SearchFilterType.SUBS);
         }}
@@ -40,7 +40,7 @@ export const SearchFormTab: React.FC = () => {
       <Button
         variant={_setVariant(activeTab, SearchFilterType.ALL)}
         text={fixtures.search_form.main_filters.all}
-        size="sm"
+        size="md"
         onClick={() => {
           setActiveTab(SearchFilterType.ALL);
         }}
