@@ -1,0 +1,24 @@
+.czCarModelAutoComplete__input {
+  @apply w-full 
+  max-w-[800px]
+  text-base
+text-gray-700
+  px-2
+  py-2
+  rounded 
+  border-[1px]
+border-white;
+}
+
+.czCarModelAutoComplete__suggestCard {
+  @apply absolute 
+  bg-white 
+  shadow-2xl
+  rounded
+  mt-1
+  flex 
+  flex-col
+  w-full
+  max-w-[800px]
+  p-2;
+}
