@@ -1,9 +1,10 @@
 import { fixtures } from "@constant/fixtures";
-import React, { Fragment, useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 import { useCarModelAutocompleteSearch } from "@hook/useCarModelAutocompleteSearch";
 import { CarModelSuggestionModel } from "@czTypes/global.type";
-import { TextField } from "@element/TextField/TextField";
+import { CircleSpinner } from "react-spinners-kit";
+import styleConfig from "../../../../tailwind.config";
 
 /**
  *
@@ -12,47 +13,47 @@ import { TextField } from "@element/TextField/TextField";
 export const CarModalAutoComplete: React.FC = () => {
   const [open, setOpen] = useState<boolean>(false);
 
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
   const [inputValue, setInputValue] = useState<string | null>(null);
   const [selectedValue, setSelectedValue] = useState<string | CarModelSuggestionModel>("");
 
-  const { isLoading, error, suggestion } = useCarModelAutocompleteSearch(inputValue);
+  const { suggestion } = useCarModelAutocompleteSearch(inputValue);
 
   const handleInputOnchange = (value: string) => {
     setInputValue(value);
+    if (value.length >= 1) {
+      setOpen(true);
+    }
   };
 
   const handleComboboxOnChange = (value: CarModelSuggestionModel) => {
     setOpen(false);
-    if (value.id === "000") {
-      setSelectedValue(inputValue ?? "");
-      return;
-    }
-    setSelectedValue(value);
-  };
 
-  useEffect(() => {
-    if (!isLoading && suggestion?.length >= 1) {
-      setOpen(true);
+    searchInputRef.current?.blur();
+
+    if (value.id !== "searchfor") {
+      setInputValue(value.text);
+      setSelectedValue(value);
     }
-  }, [isLoading, error, suggestion]);
+
+    if (value.id === "searchfor") {
+      setSelectedValue(inputValue ?? "");
+    }
+  };
 
   return (
     <Combobox value={selectedValue} onChange={handleComboboxOnChange}>
       <Combobox.Input
-        as={Fragment}
+        ref={searchInputRef}
+        className={"czCarModelAutoComplete__input"}
+        onBlur={() => {
+          setOpen(false);
+        }}
+        placeholder={fixtures.search_form.input_placeholders.car_modal}
         onChange={(event) => handleInputOnchange(event.target.value)}
         displayValue={() => inputValue ?? ""}
-      >
-        <TextField
-          tfSize="md"
-          onBlur={() => {
-            setOpen(false);
-          }}
-          withFocus={false}
-          className={"czCarModelAutoComplete__input"}
-          placeholder={fixtures.search_form.input_placeholders.car_modal}
-        />
-      </Combobox.Input>
+      />
       <Transition
         show={open}
         enter="transition duration-150 ease-out"
@@ -63,15 +64,40 @@ export const CarModalAutoComplete: React.FC = () => {
         leaveTo="opacity-0"
       >
         <Combobox.Options className="czCarModelAutoComplete__suggestCard" static>
-          {suggestion.map((carModel: CarModelSuggestionModel) => (
+          <Combobox.Option
+            key={90}
+            value={{ id: "searchfor", text: "Search for" }}
+            className={({ active }) => `czCarModelAutoComplete__item ${active ? "active" : ""}`}
+          >
+            <strong>Search for</strong> {inputValue}
+          </Combobox.Option>
+          {suggestion.length === 0 ? (
             <Combobox.Option
-              key={carModel.id}
-              value={carModel}
+              key={0}
+              value={""}
+              disabled={true}
               className={({ active }) => `czCarModelAutoComplete__item ${active ? "active" : ""}`}
             >
-              {carModel.text}
+              <CircleSpinner size={20} color={styleConfig.theme.colors.base} />
             </Combobox.Option>
-          ))}
+          ) : (
+            <>
+              {suggestion.map((carModel: CarModelSuggestionModel) => (
+                <Combobox.Option
+                  key={carModel.id}
+                  value={carModel}
+                  disabled={carModel.id === "noresult"}
+                  className={({ active }) =>
+                    `czCarModelAutoComplete__item ${active ? "active" : ""} ${
+                      carModel.id === "noresult" ? "hidden" : ""
+                    }`
+                  }
+                >
+                  {carModel.text}
+                </Combobox.Option>
+              ))}
+            </>
+          )}
         </Combobox.Options>
       </Transition>
     </Combobox>

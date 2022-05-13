@@ -5,7 +5,8 @@
 text-gray-700
   rounded 
   border-[1px]
-border-white;
+border-white
+p-2;
 }
 
 .czCarModelAutoComplete__suggestCard {

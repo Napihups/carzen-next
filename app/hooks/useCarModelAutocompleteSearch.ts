@@ -1,8 +1,9 @@
 import { CarModelSuggestionModel } from "@czTypes/global.type";
 import { useEffect, useState } from "react";
 import faker from "@faker-js/faker";
+import lodash from "lodash";
 
-faker.seed(3000);
+// faker.seed(3000);
 
 const carModels: CarModelSuggestionModel[] = new Array(300).fill(0).map(() => {
   return {
@@ -23,24 +24,28 @@ export const useCarModelAutocompleteSearch = (queryString: string | null) => {
 
   useEffect(() => {
     if (queryString !== null) {
-      /** start fecthing data when queryString on change */
+      /** Start fetching data when queryString on change */
       setIsLoading(true);
 
       setTimeout(() => {
-        const filteredData = carModels.filter((item: CarModelSuggestionModel) => {
-          return item.text.toLowerCase().includes(queryString.toLowerCase());
+        const resultList: CarModelSuggestionModel[] = [];
+
+        carModels.forEach((item: CarModelSuggestionModel) => {
+          if (lodash.includes(item.text.toLowerCase(), queryString.toLowerCase())) {
+            resultList.push(item);
+          }
         });
 
-        if (filteredData.length === 0) {
-          setSuggestion([{ id: "000", text: "No result" }]);
+        if (resultList.length === 0) {
+          setSuggestion([{ id: "noresult", text: "No result" }]);
         }
-        if (filteredData.length >= 1) {
-          setSuggestion(filteredData);
+        if (resultList.length >= 1) {
+          setSuggestion(resultList);
         }
 
         setError(null);
         setIsLoading(false);
-      }, 200);
+      }, 0);
     }
   }, [queryString]);
 
