@@ -49,6 +49,9 @@ export const CarModalAutoComplete: React.FC = () => {
         className={"czCarModelAutoComplete__input"}
         onBlur={() => {
           setOpen(false);
+          if (inputValue === null || inputValue.length === 0) {
+            setSelectedValue("");
+          }
         }}
         placeholder={fixtures.search_form.input_placeholders.car_modal}
         onChange={(event) => handleInputOnchange(event.target.value)}
