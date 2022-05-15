@@ -1,3 +1,4 @@
+import { RangeSlider } from "@element/RangeSlider/RangeSlider";
 import { Listbox, Transition } from "@headlessui/react";
 import { formatCurrency } from "@lib/currency-format";
 import React, { useCallback, useEffect, useState } from "react";
@@ -48,7 +49,7 @@ export const PriceRange: React.FC = () => {
           leaveTo="transform scale-95 opacity-0"
         >
           <Listbox.Options className="czPriceRange__panel">
-            <h1>HELLO</h1>
+            <RangeSlider />
           </Listbox.Options>
         </Transition>
       </Listbox>
