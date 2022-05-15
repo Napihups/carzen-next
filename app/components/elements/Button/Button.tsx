@@ -31,12 +31,13 @@ export const Button: React.FC<ButtonProps> = ({
   bar = false,
   type = "button",
   onClick,
+  className,
   ...btnHtmlProps
 }) => {
   return (
     <button
       {...btnHtmlProps}
-      className={`czButton ${bar ? "bar" : ""} czButton--${size} czButton-var--${variant}`}
+      className={`czButton ${bar ? "bar" : ""} czButton--${size} czButton-var--${variant} ${className}`}
       onClick={onClick}
     >
       <p className={`czButton__text--${size}`}>{text}</p>

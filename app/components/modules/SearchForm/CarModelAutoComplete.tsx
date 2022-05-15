@@ -62,7 +62,7 @@ export const CarModalAutoComplete: React.FC = () => {
         enter="transition duration-150 ease-out"
         enterFrom="transform scale-95 opacity-0"
         enterTo="transform scale-100 opacity-100"
-        leave="transition ease-in duration-50"
+        leave="transition ease-in duration-0"
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >

@@ -236,7 +236,6 @@
 @import "../components/modules/MainBanner/MainBanner.css";
 @import "../components/modules/SearchFormTab/SearchFormTab.css";
 @import "../components/modules/SearchForm/SearchForm.css";
-@import "../components/modules/CarModelAutoComplete/CarModelAutoComplete.css";
 
 /** Import Elements Css */
 @import "../components/elements/Button/Button.css";
