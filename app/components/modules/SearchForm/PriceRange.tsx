@@ -49,7 +49,13 @@ export const PriceRange: React.FC = () => {
           leaveTo="transform scale-95 opacity-0"
         >
           <Listbox.Options className="czPriceRange__panel">
-            <RangeSlider />
+            <RangeSlider
+              minBetweenRange={1000}
+              minDefault={500000}
+              maxDefault={1000000}
+              onMinChange={(value) => {}}
+              onMaxChange={(value) => {}}
+            />
           </Listbox.Options>
         </Transition>
       </Listbox>

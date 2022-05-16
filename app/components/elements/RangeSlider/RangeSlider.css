@@ -23,3 +23,23 @@
 .czRangeSlider__seperator {
   @apply px-4 font-bold justify-center items-center;
 }
+
+.czRangeSlider__slider-section {
+  @apply flex flex-row p-2 mt-10;
+}
+
+.czRangeSlider__track {
+  @apply flex h-[5px] w-full bg-gray-200 rounded-full relative;
+}
+
+.czRangeSlider__thumb {
+  @apply absolute
+  cursor-pointer
+  h-[16px]
+  w-[16px] 
+  rounded-full 
+bg-base
+opacity-30
+  bottom-[-5px]
+  left-0;
+}

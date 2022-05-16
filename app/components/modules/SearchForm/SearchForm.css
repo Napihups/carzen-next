@@ -123,10 +123,10 @@ border-white
   flex 
   flex-col
   min-w-[350px]
-  h-[200px]
+  h-auto
   shadow-xl
   mt-1
   -mr-6
   rounded 
-  p-2;
+  p-2 pb-10;
 }
