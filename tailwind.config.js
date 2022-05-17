@@ -1,5 +1,6 @@
 module.exports = {
   content: ["./pages/**/*.{js,ts,jsx,tsx,css}", "./app/components/**/*.{js,ts,jsx,tsx,css}"],
+  important: "#__next",
   theme: {
     colors: {
       base: "#026E78",

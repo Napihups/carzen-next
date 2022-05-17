@@ -1,49 +1,44 @@
 import "../app/styles/globals.css";
 import type { AppProps } from "next/app";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { BarLoader } from "@element/BarLoader/BarLoader";
+import { GlobalCssPriority } from "@common/GlobalCssPriority";
+import { CzRangeSlider } from "@cz-ui/CzRangeSlider/CzRangeSlider";
+import { DesignCanvas } from "@common/DesignCanvas";
+import { formatCurrency } from "@lib/currency-format";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
-
-  const [state, setState] = useState({
-    isRouteChanging: false,
-    loadingKey: 0,
-  });
-
-  useEffect(() => {
-    const handleRouteChangeStart = () => {
-      setState((prevState) => ({
-        ...prevState,
-        isRouteChanging: true,
-        loadingKey: prevState.loadingKey ^ 1,
-      }));
-    };
-
-    const handleRouteChangeEnd = () => {
-      setState((prevState) => ({
-        ...prevState,
-        isRouteChanging: false,
-      }));
-    };
-
-    router.events.on("routeChangeStart", handleRouteChangeStart);
-    router.events.on("routeChangeComplete", handleRouteChangeEnd);
-    router.events.on("routeChangeError", handleRouteChangeEnd);
-
-    return () => {
-      router.events.off("routeChangeStart", handleRouteChangeStart);
-      router.events.off("routeChangeComplete", handleRouteChangeEnd);
-      router.events.off("routeChangeError", handleRouteChangeEnd);
-    };
-  }, [router.events]);
   return (
-    <>
-      <BarLoader isRouteChanging={state.isRouteChanging} key={state.loadingKey} />
-      <Component {...pageProps} />
-    </>
+    <GlobalCssPriority>
+      <DesignCanvas>
+        <CzRangeSlider
+          marks={[
+            {
+              value: 0,
+              label: "$0",
+            },
+            {
+              value: 500000,
+              label: "$500,000",
+            },
+          ]}
+          valueLabelFormat={(value: number) => {
+            return formatCurrency(value);
+          }}
+          ariaValueText={(value: number) => {
+            return formatCurrency(value);
+          }}
+          min={0}
+          initialMin={0}
+          max={500000}
+          initialMax={500000}
+        />
+      </DesignCanvas>
+    </GlobalCssPriority>
   );
 }
 
 export default MyApp;
+
+/* <>
+  <BarLoader isRouteChanging={state.isRouteChanging} key={state.loadingKey} />
+  <Component {...pageProps} />
+</> */

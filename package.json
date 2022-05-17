@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "@headlessui/react": "^1.6.0",
+    "@mui/material": "^5.8.0",
     "@tanem/react-nprogress": "^5.0.0",
     "@types/lodash": "^4.14.182",
     "framer-motion": "^6.3.3",
