@@ -51,8 +51,10 @@ export const PriceRange: React.FC = () => {
           <Listbox.Options className="czPriceRange__panel">
             <RangeSlider
               minBetweenRange={1000}
-              minDefault={500000}
-              maxDefault={1000000}
+              min={0}
+              max={1000000}
+              initialMin={0}
+              initialMax={1000000}
               onMinChange={(value) => {}}
               onMaxChange={(value) => {}}
             />

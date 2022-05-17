@@ -8,109 +8,89 @@ type RangeSliderProps = {
   /** */
   onMaxChange: (value: number) => void;
   /** */
-  minDefault: number;
+  initialMin: number;
   /** */
-  maxDefault: number;
+  initialMax: number;
+  /** */
+  min: number;
+  /** */
+  max: number;
 };
 
 export const RangeSlider: React.FC<RangeSliderProps> = (props) => {
-  const [minPrice, setMinPrice] = useState<number>(props.minDefault);
-  const [maxPrice, setMaxPrice] = useState<number>(props.maxDefault);
-  const [defaultMax, setDefaultMax] = useState<number>(props.maxDefault);
+  const progressRef = useRef<HTMLDivElement>(null);
 
-  const [offSetSliderWidth, setOffSetSliderWidth] = useState<number>(0);
-  const [sliderWidth, setSliderWidth] = useState<number>(0);
+  const step = 1000;
 
-  const trackRef = useRef<HTMLDivElement>(null);
+  const [minValue, setMinValue] = useState<number>(props.initialMin);
+  const [maxValue, setMaxValue] = useState<number>(props.initialMax);
 
-  useEffect(() => {
-    const offSetSliderWidth = trackRef.current?.offsetLeft;
-    const sliderWidth = trackRef.current?.clientWidth;
-
-    setOffSetSliderWidth(offSetSliderWidth ?? 0);
-    setSliderWidth(sliderWidth ?? 0);
-  }, []);
-
-  const onMinChange = (ev: React.FormEvent<HTMLInputElement>) => {
-    setMinPrice(Number.parseFloat(ev.currentTarget.value));
-  };
-
-  const onMaxChange = (ev: React.FormEvent<HTMLInputElement>) => {
-    setMaxPrice(Number.parseFloat(ev.currentTarget.value));
-  };
-
-  const onMinMouseDown = (ev: React.MouseEvent | React.TouchEvent) => {
-    document.addEventListener("mousemove", handleMinMouseMove);
-    document.addEventListener("mouseup", handleMinMouseUp);
-
-    document.addEventListener("touchmove", handleMinMouseMove);
-    document.addEventListener("touchend", handleMinMouseUp);
-  };
-
-  const onMaxMouseDown = (ev: any) => {};
-
-  const handleMinMouseMove = (ev: any) => {
-    const elPos = trackRef.current?.getBoundingClientRect().x;
-
-    /** Start the dragging and onMinChange of value */
-    if (ev.clientX >= elPos!) {
-      console.log("start dragging min thumb");
-      console.log(elPos);
-      console.log(ev.clientX);
-      // getMinPrice base of position
-      console.log(ev.clientX - elPos!);
-
-      const posMinInPercent = ((ev.clientX - elPos!) / sliderWidth) * 100;
-
-      const minPriceFromPercent = (posMinInPercent / 100) * defaultMax;
-
-      if (minPriceFromPercent <= defaultMax) {
-        setMinPrice(minPriceFromPercent);
+  const handleMin = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(e.target.value);
+    if (maxValue - minValue >= props.minBetweenRange && maxValue <= props.max) {
+      if (parseInt(e.target.value) > maxValue) {
+      } else {
+        setMinValue(parseInt(e.target.value));
+      }
+    } else {
+      if (parseInt(e.target.value) < minValue) {
+        setMinValue(parseInt(e.target.value));
       }
     }
   };
 
-  const handleMinMouseUp = (ev: Event) => {
-    document.removeEventListener("mousemove", handleMinMouseMove);
-    document.removeEventListener("mouseup", handleMinMouseUp);
-    document.removeEventListener("touchmove", handleMinMouseMove);
-    document.removeEventListener("touchend", handleMinMouseUp);
+  const handleMax = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (maxValue - minValue >= props.minBetweenRange && maxValue <= props.max) {
+      if (parseInt(e.target.value) < minValue) {
+      } else {
+        setMaxValue(parseInt(e.target.value));
+      }
+    } else {
+      if (parseInt(e.target.value) > maxValue) {
+        setMaxValue(parseInt(e.target.value));
+      }
+    }
   };
 
-  const getMinLeftPos = () => {
-    const minPercent = (minPrice / defaultMax) * 100;
-    console.log(minPrice);
-    console.log(((sliderWidth / 100) * minPercent).toString() + "px");
-    return ((sliderWidth / 100) * minPercent - 8).toString() + "px";
-  };
-
-  const getMaxLeftPos = () => {
-    const maxPercent = (maxPrice / defaultMax) * 100;
-    return ((sliderWidth / 100) * maxPercent).toString() + "px";
-  };
+  useEffect(() => {
+    progressRef.current!.style.left = (minValue / props.max) * step + "%";
+    progressRef.current!.style.right = step - (maxValue / props.max) * step + "%";
+  }, [minValue, maxValue, props.max, step]);
 
   return (
     <div className="czRangeSlider">
       <div className="czRangeSlider__inputSection">
         <div className="czRangeSlider__fieldbox">
           <span>Min</span>
-          <input onChange={onMinChange} type="number" className="czRangeSlider__input" value={minPrice} />
+          <input type="number" className="czRangeSlider__input" />
         </div>
         <div className="czRangeSlider__seperator">-</div>
         <div className="czRangeSlider__fieldbox">
           <span>Max</span>
-          <input onChange={onMaxChange} type="number" className="czRangeSlider__input" value={maxPrice} />
+          <input type="number" className="czRangeSlider__input" />
         </div>
       </div>
-      <div className="czRangeSlider__slider-section">
-        <div className="czRangeSlider__track" ref={trackRef}>
-          <div
-            className="czRangeSlider__thumb min"
-            style={{ left: getMinLeftPos() }}
-            onMouseDown={onMinMouseDown}
-            onTouchStart={onMinMouseDown}
+      <div className="czRangeSlider__box">
+        <div className="czRangeSlider__track">
+          <div className="czRangeSlider__progress" ref={progressRef} />
+        </div>
+        <div className="czRangeSlider__slider-thumbs">
+          <input
+            onChange={handleMin}
+            type="range"
+            value={minValue}
+            min={props.min}
+            max={props.max}
+            className="czRangeSlider__thumb"
           />
-          <div className="czRangeSlider__thumb max" style={{ left: getMaxLeftPos() }} onMouseDown={onMaxMouseDown} />
+          <input
+            onChange={handleMax}
+            type="range"
+            value={maxValue}
+            min={props.min}
+            max={props.max}
+            className="czRangeSlider__thumb"
+          />
         </div>
       </div>
     </div>

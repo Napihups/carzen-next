@@ -24,22 +24,37 @@
   @apply px-4 font-bold justify-center items-center;
 }
 
-.czRangeSlider__slider-section {
-  @apply flex flex-row p-2 mt-10;
+.czRangeSlider__box {
+  @apply mt-10;
 }
 
 .czRangeSlider__track {
-  @apply flex h-[5px] w-full bg-gray-200 rounded-full relative;
+  @apply relative h-1 rounded-full bg-gray-300;
+}
+.czRangeSlider__progress {
+  @apply absolute h-1 bg-primary-300 rounded;
+}
+
+.czRangeSlider__slider-thumbs {
+  @apply relative;
 }
 
 .czRangeSlider__thumb {
-  @apply absolute
-  cursor-pointer
-  h-[16px]
-  w-[16px] 
-  rounded-full 
-bg-base
-opacity-30
-  bottom-[-5px]
-  left-0;
+  @apply absolute 
+  w-full
+  -top-1 
+  bg-transparent
+  h-1  appearance-none pointer-events-none;
+}
+
+/* Price Range */
+input[type="range"]::-webkit-slider-thumb {
+  pointer-events: auto !important;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  -webkit-appearance: none !important;
+  @apply bg-base;
+
+  /* @apply w-6 h-6 appearance-none pointer-events-auto; */
 }
