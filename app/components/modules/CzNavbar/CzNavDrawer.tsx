@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Toggler } from "./Toggler";
-import { DrawerPanel } from "./DrawerPanel";
+import { CzDrawerPanel } from "./CzDrawerPanel";
+import { CzNavDrawerToggler } from "./CzNavDrawerToggler";
 
-export const NavDrawer: React.FC = () => {
+export const CzNavDrawer: React.FC = () => {
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
-
   return (
     <>
       <div
@@ -13,17 +12,12 @@ export const NavDrawer: React.FC = () => {
           setOpenDrawer(false);
         }}
       />
-      <Toggler
+      <CzNavDrawerToggler
         onToggle={(e) => {
           setOpenDrawer(true);
         }}
       />
-      <DrawerPanel
-        drawerOpen={openDrawer}
-        onClose={(e) => {
-          setOpenDrawer(false);
-        }}
-      />
+      <CzDrawerPanel drawerOpen={openDrawer} onClose={() => setOpenDrawer(false)} />
     </>
   );
 };

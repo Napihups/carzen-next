@@ -18,13 +18,13 @@
 @import "../components/cz-ui/CzRangeSlider/CzRangeSlider.css";
 @import "../components/cz-ui/CzTextField/CzTextField.css";
 @import "../components/cz-ui/CzButton/CzButton.css";
+@import "../components/cz-ui/CzIconButton/CzIconButton.css";
 
 /** Import Layout Css */
-/* @import "../components/layouts/Default/Default.css"; */ /** Import Module Css */
-/* @import "../components/modules/Navbar/Navbar.css";
-@import "../components/modules/NavMenuBar/NavMenuBar.css";
-@import "../components/modules/NavDrawer/NavDrawer.css";
-@import "../components/modules/MainBanner/MainBanner.css";
+@import "../components/layouts/Default/Default.css";
+/** Import Module Css */
+@import "../components/modules/CzNavbar/CzNavbar.css";
+/* @import "../components/modules/MainBanner/MainBanner.css";
 @import "../components/modules/SearchFormTab/SearchFormTab.css";
 @import "../components/modules/SearchForm/SearchForm.css"; */
 /** Import Elements Css */
@@ -33,11 +33,11 @@
 @import "../components/elements/RangeSlider/RangeSlider.css"; */
 
 /** global classes */
-/* .czContainer {
+.czContainer {
   @apply container
   relative
   w-full 
   h-full
   px-4
   mx-auto;
-} */
+}

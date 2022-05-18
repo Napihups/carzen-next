@@ -1,0 +1,144 @@
+.czNavbar {
+  @apply bg-white 
+  mx-auto
+  shadow-lg
+  h-[50px] 
+  w-full
+  tablet:h-[90px];
+}
+
+.czNavbar__top {
+  @apply flex
+  flex-row  
+  w-full 
+  h-[50px] 
+  items-center 
+  justify-center
+  tablet:border-b-[1px] 
+  tablet:border-b-gray-200;
+}
+.czNavbar__bottom {
+  @apply flex-row
+  w-full
+  h-[40px] items-center justify-center
+  hidden tablet:flex;
+}
+
+.czNavbar__drawerSection {
+  @apply mr-auto laptop:hidden;
+}
+.czNavbar__logo {
+  @apply mr-auto;
+}
+
+.czNavbar__authPanel {
+  @apply flex-row 
+  w-auto 
+  h-full 
+  ml-auto 
+  items-center
+  hidden 
+  laptop:flex gap-2;
+}
+
+.czNavDrawer__backdrop {
+  @apply fixed
+  w-full
+  h-full
+  left-0
+  right-0
+  top-0
+  bottom-0
+  z-50
+  bg-gray-900
+  opacity-50
+  hidden;
+}
+
+.czNavDrawer__backdrop--show {
+  @apply flex;
+}
+.czNavbar__toggler {
+  @apply text-gray-600;
+}
+
+.czNavDrawer__panel {
+  @apply fixed
+  left-0
+  right-0
+  top-0
+  bottom-0
+  w-[296px]
+  h-screen
+  bg-base
+  z-50
+  flex
+  flex-col 
+  items-start;
+}
+
+.czNavDrawer__heading {
+  @apply flex flex-row 
+  items-center 
+  justify-between 
+  h-[50px]  
+  w-full 
+  px-4 
+  text-white;
+}
+
+.czNavDrawer__authControl {
+  @apply grid 
+  grid-cols-2 
+  gap-4
+  items-center
+  w-full 
+  px-4
+  h-[50px];
+}
+.czNavDrawer__signupButton {
+  @apply border-white text-white hover:bg-primary-500;
+}
+
+.czNavDrawer__loginButton {
+  @apply bg-white text-base hover:bg-gray-200;
+}
+.czNavDrawer__divider {
+  @apply flex 
+  flex-row
+  p-4
+  w-full
+  relative;
+}
+
+.czNavDrawer__divider span {
+  @apply flex 
+  flex-row
+  h-[1px]
+  w-full
+  relative
+  bg-gray-300;
+}
+
+.czNavDrawer__menu {
+  @apply list-none
+  flex 
+  flex-col
+  items-start
+  justify-start 
+  p-0
+  w-full;
+}
+
+.czNavDrawer__menu-item {
+  @apply flex 
+  flex-row 
+  w-full 
+  text-white 
+  p-4
+  cursor-pointer 
+  hover:opacity-70
+  border-b-[1px]
+  border-b-white 
+  border-opacity-40;
+}

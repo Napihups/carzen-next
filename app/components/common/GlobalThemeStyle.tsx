@@ -16,7 +16,7 @@ export const GlobaThemeStyle: React.FC<GlobaThemeStyleProps> = ({ children }) =>
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <StyledEngineProvider injectFirst>{children}</StyledEngineProvider>;
+      <StyledEngineProvider injectFirst>{children}</StyledEngineProvider>
     </ThemeProvider>
   );
 };

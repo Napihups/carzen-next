@@ -1,20 +1,23 @@
-import Button from "@mui/material/Button";
+import Button, { ButtonProps } from "@mui/material/Button";
 import React from "react";
 
-export const CzButton: React.FC = () => {
+interface CzButtonProps extends Omit<ButtonProps, "classes"> {
+  /** The text to be display in the button */
+  text?: string;
+}
+export const CzButton: React.FC<CzButtonProps> = (props) => {
+  const { text } = props;
   return (
     <Button
-      variant="contained"
-      color="primary"
-      size="medium"
-      fullWidth
+      {...props}
+      disableRipple
       classes={{
         root: "czButton__root",
         sizeMedium: "czButton__medium",
         containedPrimary: "czButton__contained--primary",
       }}
     >
-      Login
+      {text}
     </Button>
   );
 };
