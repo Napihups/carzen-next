@@ -20,7 +20,7 @@
 .czNavbar__bottom {
   @apply flex-row
   w-full
-  h-[40px] items-center justify-center
+  h-[40px] items-center justify-start
   hidden tablet:flex;
 }
 
@@ -141,4 +141,102 @@
   border-b-[1px]
   border-b-white 
   border-opacity-40;
+}
+
+.czNavMenu {
+  @apply flex 
+  flex-row 
+  h-full 
+  w-full 
+  items-center 
+  p-0;
+}
+
+.czNavMenu__menuItem {
+  @apply flex
+  flex-row
+  items-center
+  mr-0
+  px-4
+  text-sm 
+  h-full
+  font-bold
+  text-gray-900
+  relative cursor-pointer;
+}
+
+.czNavMenu__menuItem.active {
+  @apply bg-base text-white;
+}
+.czNavMenu__menuItem.active:after {
+  @apply absolute 
+  bottom-0
+  left-0
+  right-0
+  m-auto
+  w-full
+  text-transparent
+  bg-base
+  h-[2px];
+  content: ".";
+}
+
+.czNavMenu__menuItem:after {
+  @apply absolute 
+  bottom-0
+  left-0
+  right-0
+  m-auto
+  w-0
+  text-transparent
+  bg-base
+  h-[2px];
+  content: ".";
+}
+
+.czNavMenu__menuItem:hover:after {
+  @apply w-full;
+  animation: fill 1s forwards;
+}
+
+.czNavMenu__item-wrapper {
+  @apply flex-row h-full items-center hidden tablet:hidden laptop:flex;
+}
+
+.czNavMenuExtDropdown {
+  @apply relative text-left flex h-full laptop:hidden;
+}
+
+.czNavMenu__menuItem.dropdown-toggler {
+  @apply bg-white;
+}
+
+.czNavMenuExtDropdown__items {
+  @apply absolute 
+  bg-white
+  right-0 
+  top-[40px] 
+  w-56
+  shadow-xl
+  flex 
+  flex-col 
+  p-0;
+}
+.czNavMenuExtDropdown__item {
+  @apply flex
+  flex-row
+  p-3 
+  cursor-pointer
+  font-bold
+  text-sm 
+  bg-white
+  rounded-b
+   border-b-[1px] 
+   border-gray-200 
+   hover:bg-base 
+   hover:text-white;
+}
+
+.czNavMenuExtDropdown__item.active {
+  @apply text-base text-sm;
 }
