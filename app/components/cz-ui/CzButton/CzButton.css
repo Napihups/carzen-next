@@ -1,0 +1,10 @@
+.czButton__root {
+  text-transform: none;
+  @apply shadow-none hover:shadow-none;
+}
+.czButton__medium {
+  @apply text-base;
+}
+.czButton__contained--primary {
+  @apply bg-base text-gray-300 hover:bg-primary-600;
+}
