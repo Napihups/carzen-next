@@ -1,0 +1,39 @@
+.czMonthlyInst__popover {
+  @apply relative;
+}
+
+.czMonthlyInst__label {
+  @apply text-white mb-1 opacity-0;
+}
+.czMonthlyInst__label.show {
+  @apply opacity-100;
+}
+
+.czMonthlyInst__input input {
+  @apply cursor-pointer;
+}
+
+.czMonthlyInst__icon {
+  @apply absolute 
+  bottom-3 
+  right-3 
+  text-gray-900;
+}
+
+.czMonthlyInst__panel {
+  @apply absolute 
+  bg-white 
+  shadow-2xl 
+  min-w-[400px]
+  min-h-[200px]
+  rounded mt-1
+  py-2 px-4;
+}
+
+.czMonthlyInst__input-controls {
+  @apply flex 
+  flex-row
+  gap-2 
+  items-center 
+  justify-between;
+}
