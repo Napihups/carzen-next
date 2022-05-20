@@ -1,6 +1,6 @@
 import React from "react";
-import { MainBanner } from "@module/MainBanner/MainBanner";
+import { CzBanner } from "@module/CzBanner/CzBanner";
 
 export const LandingTemplate: React.FC = () => {
-  return <MainBanner />;
+  return <CzBanner />;
 };

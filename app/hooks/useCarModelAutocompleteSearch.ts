@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import faker from "@faker-js/faker";
 import lodash from "lodash";
 
-// faker.seed(3000);
-
 const carModels: CarModelSuggestionModel[] = new Array(300).fill(0).map(() => {
   return {
     id: faker.database.mongodbObjectId(),
@@ -16,14 +14,14 @@ const carModels: CarModelSuggestionModel[] = new Array(300).fill(0).map(() => {
  *
  * @param queryString
  */
-export const useCarModelAutocompleteSearch = (queryString: string | null) => {
+export const useCarModelAutocompleteSearch = (queryString: string | null, stopFetch: boolean) => {
   /** States */
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<null | Error | string>(null);
   const [suggestion, setSuggestion] = useState<CarModelSuggestionModel[]>([]);
 
   useEffect(() => {
-    if (queryString !== null) {
+    if (queryString !== null && !stopFetch) {
       /** Start fetching data when queryString on change */
       setIsLoading(true);
 
@@ -47,7 +45,7 @@ export const useCarModelAutocompleteSearch = (queryString: string | null) => {
         setIsLoading(false);
       }, 0);
     }
-  }, [queryString]);
+  }, [queryString, stopFetch]);
 
   return { isLoading, error, suggestion };
 };

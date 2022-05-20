@@ -1,9 +1,9 @@
 .czTextField__root {
   @apply border-[1px] 
+  bg-white
   border-gray-300 
   rounded text-center px-3 py-1;
 }
-
 .czTextField__focused {
   @apply shadow-lg;
 }

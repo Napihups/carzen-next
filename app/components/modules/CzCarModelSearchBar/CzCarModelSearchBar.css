@@ -1,0 +1,24 @@
+.czCarModelSearchBar__input {
+  @apply max-w-[800px];
+}
+.czCarModelSearchBar__suggestCard {
+  @apply absolute 
+  bg-white 
+  shadow-2xl
+  rounded
+  mt-1
+  flex 
+  flex-col
+  w-full
+  max-w-[800px]
+  p-0
+  max-h-[250px]
+  overflow-scroll;
+}
+.czCarModelSearchBar__item {
+  @apply p-2 cursor-pointer;
+}
+
+.czCarModelSearchBar__item.active {
+  @apply bg-primary-100;
+}

@@ -1,8 +1,8 @@
-import React, { Fragment, useState } from "react";
+import { CzTextField } from "@cz-ui/CzTextField/CzTextField";
 import { Listbox, Transition } from "@headlessui/react";
+import React, { Fragment, useState } from "react";
 import { IoCaretDown } from "react-icons/io5";
 
-/**  Sample Vehicle Types Data */
 const vehicleTypes: string[] = [
   "Vehicle Type",
   "Mini",
@@ -21,19 +21,18 @@ const vehicleTypes: string[] = [
   "Electric Car",
   "Diesel Car",
 ];
-
-export const VehicleTypeSelect: React.FC = () => {
+export const CzVehicleTypeSelect: React.FC = () => {
   const [selected, setSelected] = useState<string>(vehicleTypes[0]);
 
   return (
     <div className="czVehicleTypeSelect">
       <Listbox value={selected} onChange={setSelected}>
         <Listbox.Button as={Fragment}>
-          <div className="czVehicleTypeSelect__wrapper">
-            <input
+          <div>
+            <CzTextField
+              className="czVehicleTypeSelect__input"
               contentEditable={false}
               placeholder="Vehicle Type"
-              className="czVehicleTypeSelect__input"
               value={selected}
               onChange={() => {}}
             />

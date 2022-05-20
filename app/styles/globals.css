@@ -1,15 +1,6 @@
-/** Will use MUI CssBaseline instead as it play nicely with MUI components */
+@import "./custom-preflight.css";
 @tailwind components;
 @tailwind utilities;
-
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  border-width: 0;
-  border-style: solid;
-  border-color: theme("borderColor.DEFAULT", currentColor);
-}
 
 /** Import Common Css */
 @import "../components/common/DesignCanvas.css";
@@ -24,13 +15,12 @@
 @import "../components/layouts/Default/Default.css";
 /** Import Module Css */
 @import "../components/modules/CzNavbar/CzNavbar.css";
-/* @import "../components/modules/MainBanner/MainBanner.css";
-@import "../components/modules/SearchFormTab/SearchFormTab.css";
-@import "../components/modules/SearchForm/SearchForm.css"; */
+@import "../components/modules/CzBanner/CzBanner.css";
+@import "../components/modules/CzCarModelSearchBar/CzCarModelSearchBar.css";
+
 /** Import Elements Css */
-/* @import "../components/elements/Button/Button.css";
-@import "../components/elements/TextField/TextField.css";
-@import "../components/elements/RangeSlider/RangeSlider.css"; */
+@import "../components/elements/CzVehicleTypeSelect/CzVehicleTypeSelect.css";
+@import "../components/elements/CzPriceRangeSelect/CzPriceRangeSelect.css";
 
 /** global classes */
 .czContainer {

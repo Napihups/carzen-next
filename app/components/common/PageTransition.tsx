@@ -1,4 +1,4 @@
-import { BarLoader } from "@element/BarLoader/BarLoader";
+import { CzBarLoader } from "@element/CzBarLoader/CzBarLoader";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
@@ -37,5 +37,5 @@ export const PageTransition: React.FC = () => {
     };
   }, [router.events]);
 
-  return <BarLoader isRouteChanging={state.isRouteChanging} key={state.loadingKey} />;
+  return <CzBarLoader isRouteChanging={state.isRouteChanging} key={state.loadingKey} />;
 };

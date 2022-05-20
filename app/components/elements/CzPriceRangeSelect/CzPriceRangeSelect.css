@@ -1,0 +1,36 @@
+.czPriceRangeSelect {
+  @apply relative;
+}
+
+.czPriceRangeSelect__input input {
+  @apply cursor-pointer;
+}
+
+.czPriceRangeSelect__icon {
+  @apply absolute 
+  bottom-3 
+  right-3 
+  text-gray-900;
+}
+
+.czPriceRangeSelect__options {
+  @apply absolute 
+  bg-white 
+  rounded 
+  w-full 
+  max-h-[200px] 
+  overflow-scroll
+  shadow-2xl mt-1;
+}
+
+.czPriceRangeSelect__option {
+  @apply py-1 px-2 cursor-pointer;
+}
+
+.czPriceRangeSelect__option.default {
+  @apply text-gray-500;
+}
+
+.czPriceRangeSelect__option.active {
+  @apply bg-primary-100;
+}

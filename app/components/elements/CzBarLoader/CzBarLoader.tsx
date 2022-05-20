@@ -1,7 +1,7 @@
 import React from "react";
 import { useNProgress } from "@tanem/react-nprogress";
 
-export const BarLoader: React.FC<{ isRouteChanging: boolean }> = ({ isRouteChanging }) => {
+export const CzBarLoader: React.FC<{ isRouteChanging: boolean }> = ({ isRouteChanging }) => {
   const { animationDuration, isFinished, progress } = useNProgress({
     isAnimating: isRouteChanging,
     animationDuration: 300,

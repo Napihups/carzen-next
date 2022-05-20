@@ -1,0 +1,36 @@
+.czVehicleTypeSelect {
+  @apply relative;
+}
+
+.czVehicleTypeSelect__input input {
+  @apply cursor-pointer;
+}
+
+.czVehicleTypeSelect__icon {
+  @apply absolute 
+  bottom-3 
+  right-3 
+  text-gray-900;
+}
+
+.czVehicleTypeSelect__options {
+  @apply absolute 
+  bg-white 
+  rounded 
+  w-full 
+  max-h-[200px] 
+  overflow-scroll
+  shadow-2xl mt-1;
+}
+
+.czVehicleTypeSelect__option {
+  @apply py-1 px-2 cursor-pointer;
+}
+
+.czVehicleTypeSelect__option.default {
+  @apply text-gray-500;
+}
+
+.czVehicleTypeSelect__option.active {
+  @apply bg-primary-100;
+}

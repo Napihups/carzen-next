@@ -1,0 +1,83 @@
+.czBanner {
+  @apply block 
+  w-full 
+  min-h-[400px]
+  bg-base 
+  rounded 
+  px-8
+  py-4;
+}
+
+.czBanner__blob {
+  @apply absolute
+  flex
+  scale-50
+  right-[-120px]
+  bottom-[-150px]
+  laptop:scale-90
+  laptop:right-[0px]
+  laptop:top-[150px]
+  desktop:scale-100
+  desktop:right-[20px]
+  desktop:top-[140px];
+}
+
+.czBanner__searchform {
+  @apply flex 
+  flex-col 
+  w-auto
+  h-auto;
+}
+
+.czBanner__searchForm {
+  @apply flex 
+  flex-col 
+  w-auto
+  h-auto;
+}
+
+.czSearchTab {
+  @apply flex 
+  flex-col 
+  laptop:flex-row
+  laptop:w-full
+  h-auto
+  justify-start
+  gap-2;
+}
+
+.czSearchTab__title {
+  @apply text-xl
+  laptop:text-2xl 
+  font-extrabold 
+  text-white 
+  mr-4;
+}
+
+.czSearchTab__tab {
+  @apply border-white text-white hover:bg-primary-500;
+}
+
+.czSearchTab__tab.active {
+  @apply bg-gray-700 text-white border-gray-700;
+}
+
+.czSearchForm {
+  @apply flex 
+  flex-col 
+  h-auto
+  w-full 
+  py-4;
+}
+
+.czSearchForm__top {
+  @apply z-20;
+}
+.czSearchForm__bottom {
+  @apply flex 
+  flex-row 
+  w-full 
+  py-2 
+  z-10 
+  gap-2;
+}

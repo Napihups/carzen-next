@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export const BannerCarBlob = () => (
+export const CzCarBlob = () => (
   <svg
     width={526}
     height={395}

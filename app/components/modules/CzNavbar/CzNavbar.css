@@ -210,17 +210,25 @@
 .czNavMenu__menuItem.dropdown-toggler {
   @apply bg-white;
 }
+.czNavMenu__menuItem.dropdown-toggler.open {
+  @apply text-base bg-gray-50;
+}
 
 .czNavMenuExtDropdown__items {
   @apply absolute 
+  z-50
   bg-white
   right-0 
   top-[40px] 
   w-56
+  h-auto
   shadow-xl
   flex 
   flex-col 
-  p-0;
+  p-0   
+  rounded-b
+  border-t-[1px] 
+  overflow-hidden;
 }
 .czNavMenuExtDropdown__item {
   @apply flex
@@ -229,12 +237,14 @@
   cursor-pointer
   font-bold
   text-sm 
+  text-gray-900
   bg-white
-  rounded-b
    border-b-[1px] 
    border-gray-200 
-   hover:bg-base 
-   hover:text-white;
+   hover:bg-primary-100 
+   hover:text-gray-900
+   hover:text-sm 
+   last:border-transparent;
 }
 
 .czNavMenuExtDropdown__item.active {

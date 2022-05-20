@@ -1,6 +1,12 @@
 {
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
+  "editor.fontSize":15,
+  "editor.fontWeight": "100",
+  "editor.fontFamily": "'Courier New', monospace",
+  "workbench.colorCustomizations": {
+    "editor.background": "#111213"
+  }, 
   "[javascript]": {
     "editor.maxTokenizationLineLength": 2500,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
