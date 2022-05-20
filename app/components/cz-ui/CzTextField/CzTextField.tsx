@@ -4,14 +4,16 @@ import Input, { InputProps } from "@mui/material/Input";
 interface CzTextFieldProps extends InputProps {}
 
 export const CzTextField = React.forwardRef<HTMLInputElement, CzTextFieldProps>((props, ref) => {
+  const { className, ...rest } = props;
   return (
     <Input
-      {...props}
+      {...rest}
       disableUnderline
       ref={ref}
       componentsProps={{ input: { tabIndex: 1 } }}
       fullWidth
-      classes={{ root: "czTextField__root", focused: "czTextField__focused" }}
+      className={`czTextField__root ${className}`}
+      classes={{ root: "", focused: "czTextField__focused" }}
     />
   );
 });

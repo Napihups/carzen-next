@@ -6,6 +6,13 @@
   @apply cursor-pointer;
 }
 
+.czVehicleTypeSelect__label {
+  @apply text-white mb-1 opacity-0;
+}
+
+.czVehicleTypeSelect__label.show {
+  @apply opacity-100;
+}
 .czVehicleTypeSelect__icon {
   @apply absolute 
   bottom-3 

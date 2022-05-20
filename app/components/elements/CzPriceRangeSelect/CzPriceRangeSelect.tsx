@@ -1,5 +1,6 @@
 import { CzTextField } from "@cz-ui/CzTextField/CzTextField";
 import { Listbox, Transition } from "@headlessui/react";
+import { FormControl, FormGroup, FormLabel, InputLabel } from "@mui/material";
 import React, { Fragment, useState } from "react";
 import { IoCaretDown } from "react-icons/io5";
 
@@ -67,6 +68,10 @@ const PRICE_RANGES: PriceRangeType[] = [
   },
 ];
 
+const _showLabel = (selected: string) => {
+  return selected !== PRICE_RANGES[0].label;
+};
+
 export const CzPriceRangeSelect: React.FC = () => {
   const [selected, setSelected] = useState<PriceRangeType>(PRICE_RANGES[0]);
 
@@ -75,13 +80,19 @@ export const CzPriceRangeSelect: React.FC = () => {
       <Listbox value={selected} onChange={setSelected}>
         <Listbox.Button as={Fragment}>
           <div>
-            <CzTextField
-              className="czPriceRangeSelect__input"
-              contentEditable={false}
-              placeholder="Price Range"
-              value={selected.label}
-              onChange={() => {}}
-            />
+            <FormGroup>
+              <FormLabel className={`czPriceRangeSelect__label ${_showLabel(selected.label) ? "show" : ""}`}>
+                Price Range
+              </FormLabel>
+              <CzTextField
+                className="czPriceRangeSelect__input"
+                contentEditable={false}
+                placeholder="Price Range"
+                value={selected.label}
+                onChange={() => {}}
+              />
+            </FormGroup>
+
             <IoCaretDown className="czPriceRangeSelect__icon" />
           </div>
         </Listbox.Button>

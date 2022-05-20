@@ -21,6 +21,7 @@
 /** Import Elements Css */
 @import "../components/elements/CzVehicleTypeSelect/CzVehicleTypeSelect.css";
 @import "../components/elements/CzPriceRangeSelect/CzPriceRangeSelect.css";
+@import "../components/elements/CzMonthlyInstallment/CzMonthlyInstallment.css";
 
 /** global classes */
 .czContainer {

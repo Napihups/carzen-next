@@ -6,6 +6,13 @@
   @apply cursor-pointer;
 }
 
+.czPriceRangeSelect__label {
+  @apply text-white mb-1 opacity-0;
+}
+.czPriceRangeSelect__label.show {
+  @apply opacity-100;
+}
+
 .czPriceRangeSelect__icon {
   @apply absolute 
   bottom-3 

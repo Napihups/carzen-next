@@ -1,5 +1,6 @@
 import { CzTextField } from "@cz-ui/CzTextField/CzTextField";
 import { Listbox, Transition } from "@headlessui/react";
+import { FormGroup, FormLabel } from "@mui/material";
 import React, { Fragment, useState } from "react";
 import { IoCaretDown } from "react-icons/io5";
 
@@ -21,6 +22,11 @@ const vehicleTypes: string[] = [
   "Electric Car",
   "Diesel Car",
 ];
+
+const _showLabel = (selected: string) => {
+  return selected !== vehicleTypes[0];
+};
+
 export const CzVehicleTypeSelect: React.FC = () => {
   const [selected, setSelected] = useState<string>(vehicleTypes[0]);
 
@@ -29,13 +35,18 @@ export const CzVehicleTypeSelect: React.FC = () => {
       <Listbox value={selected} onChange={setSelected}>
         <Listbox.Button as={Fragment}>
           <div>
-            <CzTextField
-              className="czVehicleTypeSelect__input"
-              contentEditable={false}
-              placeholder="Vehicle Type"
-              value={selected}
-              onChange={() => {}}
-            />
+            <FormGroup>
+              <FormLabel className={`czVehicleTypeSelect__label ${_showLabel(selected) ? "show" : ""}`}>
+                Vehicle Type
+              </FormLabel>
+              <CzTextField
+                className="czVehicleTypeSelect__input"
+                contentEditable={false}
+                placeholder="Vehicle Type"
+                value={selected}
+                onChange={() => {}}
+              />
+            </FormGroup>
             <IoCaretDown className="czVehicleTypeSelect__icon" />
           </div>
         </Listbox.Button>
