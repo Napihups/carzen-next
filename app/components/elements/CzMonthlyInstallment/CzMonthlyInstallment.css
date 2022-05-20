@@ -8,6 +8,10 @@
 .czMonthlyInst__label.show {
   @apply opacity-100;
 }
+.czMonthlyInst__button {
+  @apply py-2 px-3 bg-white text-base text-gray-900  flex-row justify-between
+  min-w-[200px] hover:shadow-lg hover:bg-gray-50;
+}
 
 .czMonthlyInst__input input {
   @apply cursor-pointer;
@@ -25,15 +29,18 @@
   bg-white 
   shadow-2xl 
   min-w-[400px]
-  min-h-[200px]
+  h-auto
   rounded mt-1
   py-2 px-4;
 }
 
 .czMonthlyInst__input-controls {
   @apply flex 
-  flex-row
+  flex-col
   gap-2 
-  items-center 
+  items-start 
   justify-between;
+}
+.czMonthlyInst__slider-row {
+  @apply px-5 pt-10 pb-3;
 }

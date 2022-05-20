@@ -1,4 +1,4 @@
-import { CzTextField } from "@cz-ui/CzTextField/CzTextField";
+import { CzButton } from "@cz-ui/CzButton/CzButton";
 import { Listbox, Transition } from "@headlessui/react";
 import { FormGroup, FormLabel } from "@mui/material";
 import React, { Fragment, useState } from "react";
@@ -39,15 +39,14 @@ export const CzVehicleTypeSelect: React.FC = () => {
               <FormLabel className={`czVehicleTypeSelect__label ${_showLabel(selected) ? "show" : ""}`}>
                 Vehicle Type
               </FormLabel>
-              <CzTextField
-                className="czVehicleTypeSelect__input"
-                contentEditable={false}
-                placeholder="Vehicle Type"
-                value={selected}
-                onChange={() => {}}
+              <CzButton
+                className="czVehicleTypeSelect__button"
+                fullWidth
+                color="inherit"
+                text={selected}
+                endIcon={<IoCaretDown size={16} />}
               />
             </FormGroup>
-            <IoCaretDown className="czVehicleTypeSelect__icon" />
           </div>
         </Listbox.Button>
         <Transition

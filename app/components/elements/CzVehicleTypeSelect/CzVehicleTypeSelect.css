@@ -2,8 +2,9 @@
   @apply relative;
 }
 
-.czVehicleTypeSelect__input input {
-  @apply cursor-pointer;
+.czVehicleTypeSelect__button {
+  @apply py-2 px-3 bg-white text-base text-gray-900  flex-row justify-between
+  min-w-[200px] hover:shadow-lg hover:bg-gray-50;
 }
 
 .czVehicleTypeSelect__label {

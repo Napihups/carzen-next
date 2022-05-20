@@ -1,6 +1,6 @@
 .czButton__root {
   text-transform: none;
-  @apply shadow-none hover:shadow-none transition-none;
+  @apply shadow-none hover:shadow-none transition-none rounded;
 }
 .czButton__medium {
   @apply text-base;

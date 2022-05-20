@@ -1,3 +1,4 @@
+import { CzButton } from "@cz-ui/CzButton/CzButton";
 import { CzTextField } from "@cz-ui/CzTextField/CzTextField";
 import { Listbox, Transition } from "@headlessui/react";
 import { FormControl, FormGroup, FormLabel, InputLabel } from "@mui/material";
@@ -84,16 +85,14 @@ export const CzPriceRangeSelect: React.FC = () => {
               <FormLabel className={`czPriceRangeSelect__label ${_showLabel(selected.label) ? "show" : ""}`}>
                 Price Range
               </FormLabel>
-              <CzTextField
-                className="czPriceRangeSelect__input"
-                contentEditable={false}
-                placeholder="Price Range"
-                value={selected.label}
-                onChange={() => {}}
+              <CzButton
+                className="czPriceRangeSelect__button"
+                fullWidth
+                color="inherit"
+                text={selected.label}
+                endIcon={<IoCaretDown size={16} />}
               />
             </FormGroup>
-
-            <IoCaretDown className="czPriceRangeSelect__icon" />
           </div>
         </Listbox.Button>
 
