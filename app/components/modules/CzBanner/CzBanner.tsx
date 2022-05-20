@@ -10,9 +10,6 @@ export const CzBanner: React.FC = () => {
         <CzCarBlob />
       </div>
       <div className="czBanner__searchForm">
-        <div className="czBanner__card-bottom">
-          <h1>Hello world</h1>
-        </div>
         <CzSearchTab />
         <CzSearchForm />
       </div>
