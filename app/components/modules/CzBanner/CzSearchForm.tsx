@@ -10,10 +10,14 @@ export const CzSearchForm: React.FC = () => {
       <div className="czSearchForm__top">
         <CzCarModelSearchBar />
       </div>
-      <div className="czSearchForm__bottom">
+      <div className="czSearchForm__row z-10">
         <CzVehicleTypeSelect />
         <CzPriceRangeSelect />
         <CzInstRange />
+      </div>
+      <div className="czSearchForm__row z-0">
+        <CzVehicleTypeSelect />
+        <CzPriceRangeSelect />
       </div>
     </div>
   );

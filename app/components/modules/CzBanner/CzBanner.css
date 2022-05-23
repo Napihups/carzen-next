@@ -73,11 +73,10 @@
 .czSearchForm__top {
   @apply z-20;
 }
-.czSearchForm__bottom {
+.czSearchForm__row {
   @apply flex 
   flex-row 
   w-full 
   py-2 
-  z-10 
   gap-2;
 }
