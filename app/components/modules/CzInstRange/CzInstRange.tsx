@@ -90,7 +90,7 @@ const Toggler: React.FC = () => {
             className="czMonthlyInst__button"
             fullWidth
             color="inherit"
-            onClick={(_) => {
+            onClick={() => {
               setPanelOpen(!panelOpen);
             }}
             onBlur={() => {
@@ -129,6 +129,10 @@ const CzInstRangeSlider: React.FC<CzInstRangeSliderProps> = ({ minDefault, maxDe
       onValuesChange?.([values[0], Math.max(newValues[1], values[0] + MIN_DIFF)]);
     }
   };
+
+  useEffect(() => {
+    setValues([minDefault, maxDefault]);
+  }, [minDefault, maxDefault]);
 
   return (
     <CzRangeSlider
@@ -191,9 +195,23 @@ const CzInstRangeForm: React.FC = () => {
     }
   }, [calibrateRangeValues, onSubmitEnter, panelOpen]);
 
+  const onResetClick = () => {
+    setMinValue(MIN);
+    setMaxValue(MAX);
+    setMin(MIN);
+    setMax(MAX);
+  };
+
   return (
     <>
       <div className="czMonthlyInst__input-controls">
+        <CzButton
+          onClick={() => onResetClick()}
+          size="small"
+          color="inherit"
+          className="czMonthlyInst__reset"
+          text="Reset"
+        />
         <FormGroup>
           <FormLabel className="text-gray-600">Min</FormLabel>
           <div className="flex flex-row items-center">

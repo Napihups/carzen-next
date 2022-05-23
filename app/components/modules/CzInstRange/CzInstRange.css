@@ -43,3 +43,7 @@
 .czMonthlyInst__slider-row {
   @apply px-5 pt-10 pb-3;
 }
+
+.czMonthlyInst__reset {
+  @apply absolute right-2 top-2 rounded-full;
+}
