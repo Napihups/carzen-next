@@ -16,12 +16,12 @@
 /** Import Module Css */
 @import "../components/modules/CzNavbar/CzNavbar.css";
 @import "../components/modules/CzBanner/CzBanner.css";
-@import "../components/modules/CzCarModelSearchBar/CzCarModelSearchBar.css";
-@import "../components/modules/CzInstRange/CzInstRange.css";
 
 /** Import Elements Css */
+@import "../components/elements/CzCarModelSearchBar/CzCarModelSearchBar.css";
 @import "../components/elements/CzVehicleTypeSelect/CzVehicleTypeSelect.css";
 @import "../components/elements/CzPriceRangeSelect/CzPriceRangeSelect.css";
+@import "../components/elements/CzInstRange/CzInstRange.css";
 
 /** global classes */
 .czContainer {
