@@ -1,7 +1,7 @@
-import { CzMonthlyInstallment } from "@element/CzMonthlyInstallment/CzMonthlyInstallment";
 import { CzPriceRangeSelect } from "@element/CzPriceRangeSelect/CzPriceRangeSelect";
 import { CzVehicleTypeSelect } from "@element/CzVehicleTypeSelect/CzVehicleTypeSelect";
 import { CzCarModelSearchBar } from "@module/CzCarModelSearchBar/CzCarModelSearchBar";
+import { CzInstRange } from "@module/CzInstRange/CzInstRange";
 import React from "react";
 
 export const CzSearchForm: React.FC = () => {
@@ -13,7 +13,7 @@ export const CzSearchForm: React.FC = () => {
       <div className="czSearchForm__bottom">
         <CzVehicleTypeSelect />
         <CzPriceRangeSelect />
-        <CzMonthlyInstallment />
+        <CzInstRange />
       </div>
     </div>
   );
