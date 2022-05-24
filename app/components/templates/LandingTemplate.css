@@ -1,0 +1,29 @@
+.czLanding {
+  @apply flex
+   flex-col 
+   w-full 
+   h-full;
+}
+.czBanner {
+  @apply block 
+  w-full 
+  min-h-[400px]
+  bg-base 
+  rounded 
+  px-8
+  py-4;
+}
+
+.czBanner__blob {
+  @apply absolute
+  flex
+  scale-50
+  right-[-120px]
+  bottom-[-150px]
+  laptop:scale-90
+  laptop:right-[0px]
+  laptop:top-[150px]
+  desktop:scale-100
+  desktop:right-[20px]
+  desktop:top-[140px];
+}

@@ -5,6 +5,8 @@
 /** Import Common Css */
 @import "../components/common/DesignCanvas.css";
 
+/** Templates */
+@import "../components/templates/LandingTemplate.css";
 /** Import cz-ui Css */
 @import "../components/cz-ui/CzRangeSlider/CzRangeSlider.css";
 @import "../components/cz-ui/CzTextField/CzTextField.css";
@@ -16,7 +18,7 @@
 @import "../components/layouts/Default/Default.css";
 /** Import Module Css */
 @import "../components/modules/CzNavbar/CzNavbar.css";
-@import "../components/modules/CzBanner/CzBanner.css";
+@import "../components/modules/CzSearchForm/CzSearchForm.css";
 
 /** Import Elements Css */
 @import "../components/elements/CzCarModelSearchBar/CzCarModelSearchBar.css";

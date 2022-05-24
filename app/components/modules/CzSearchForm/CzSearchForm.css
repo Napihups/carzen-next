@@ -1,0 +1,45 @@
+.czSearchFormContainer {
+  @apply flex 
+  flex-col 
+  w-auto
+  h-auto;
+}
+.czSearchForm {
+  @apply flex 
+  flex-col 
+  w-full 
+  py-4;
+}
+.czSearchTabs {
+  @apply flex 
+  flex-col 
+  laptop:flex-row
+  laptop:w-full
+  h-auto
+  justify-start
+  gap-2;
+}
+
+.czSearchTabs__title {
+  @apply text-xl
+  laptop:text-2xl 
+  font-extrabold 
+  text-white 
+  mr-4;
+}
+
+.czSearchTabs__tab {
+  @apply border-white text-white hover:bg-primary-500;
+}
+
+.czSearchTabs__tab.active {
+  @apply bg-gray-700 text-white border-gray-700;
+}
+
+.czSearchBarContainer {
+  @apply z-50;
+}
+
+.czSearchForm__submit {
+  @apply flex py-2 bg-gray-700 text-white mt-auto hover:bg-gray-800;
+}
