@@ -1,6 +1,7 @@
 import { CzCarBlob } from "@element/CzCarBlob/CzCarBlob";
 import React from "react";
 import { CzSearchForm } from "./CzSearchForm";
+import { CzSearchFormProvider } from "./CzSearchFormContext";
 import { CzSearchTab } from "./CzSearchTab";
 
 export const CzBanner: React.FC = () => {
@@ -10,8 +11,10 @@ export const CzBanner: React.FC = () => {
         <CzCarBlob />
       </div>
       <div className="czBanner__searchForm">
-        <CzSearchTab />
-        <CzSearchForm />
+        <CzSearchFormProvider>
+          <CzSearchTab />
+          <CzSearchForm />
+        </CzSearchFormProvider>
       </div>
     </div>
   );
