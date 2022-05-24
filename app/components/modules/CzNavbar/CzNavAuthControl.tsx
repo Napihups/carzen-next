@@ -2,8 +2,12 @@ import React from "react";
 import { CzButton } from "@cz-ui/CzButton/CzButton";
 
 export const CzNavAuthControl: React.FC = () => {
-  const handleSignupClick = (ev: React.MouseEvent) => {};
-  const handleLoginClick = (ev: React.MouseEvent) => {};
+  const handleSignupClick = (ev: React.MouseEvent) => {
+    ev.preventDefault();
+  };
+  const handleLoginClick = (ev: React.MouseEvent) => {
+    ev.preventDefault();
+  };
 
   return (
     <>
