@@ -1,31 +1,27 @@
-.czPriceRangeSelect {
+.czSingleSelect {
   @apply relative;
 }
 
-.czPriceRangeSelect__input input {
-  @apply cursor-pointer;
-}
-
-.czPriceRangeSelect__button {
+.czSingleSelect__button {
   @apply py-2 px-3 bg-white text-base text-gray-900  flex-row justify-between
   min-w-[200px] hover:shadow-lg hover:bg-gray-50;
 }
 
-.czPriceRangeSelect__label {
+.czSingleSelect__label {
   @apply text-white mb-1 opacity-0;
 }
-.czPriceRangeSelect__label.show {
+
+.czSingleSelect__label.show {
   @apply opacity-100;
 }
-
-.czPriceRangeSelect__icon {
+.czSingleSelect__icon {
   @apply absolute 
   bottom-3 
   right-3 
   text-gray-900;
 }
 
-.czPriceRangeSelect__options {
+.czSingleSelect__options {
   @apply absolute 
   bg-white 
   rounded 
@@ -35,14 +31,14 @@
   shadow-2xl mt-1;
 }
 
-.czPriceRangeSelect__option {
+.czSingleSelect__option {
   @apply py-1 px-2 cursor-pointer;
 }
 
-.czPriceRangeSelect__option.default {
+.czSingleSelect__option.default {
   @apply text-gray-500;
 }
 
-.czPriceRangeSelect__option.active {
+.czSingleSelect__option.active {
   @apply bg-primary-100;
 }

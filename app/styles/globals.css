@@ -10,6 +10,7 @@
 @import "../components/cz-ui/CzTextField/CzTextField.css";
 @import "../components/cz-ui/CzButton/CzButton.css";
 @import "../components/cz-ui/CzIconButton/CzIconButton.css";
+@import "../components/cz-ui/CzSingleSelect/CzSingleSelect.css";
 
 /** Import Layout Css */
 @import "../components/layouts/Default/Default.css";
@@ -19,8 +20,6 @@
 
 /** Import Elements Css */
 @import "../components/elements/CzCarModelSearchBar/CzCarModelSearchBar.css";
-@import "../components/elements/CzVehicleTypeSelect/CzVehicleTypeSelect.css";
-@import "../components/elements/CzPriceRangeSelect/CzPriceRangeSelect.css";
 @import "../components/elements/CzInstRange/CzInstRange.css";
 
 /** global classes */

@@ -80,3 +80,48 @@
   py-2 
   gap-2;
 }
+
+.czBannerSelectInput {
+  @apply relative;
+}
+
+.czBannerSelectInput__button {
+  @apply py-2 px-3 bg-white text-base text-gray-900  flex-row justify-between
+  min-w-[200px] hover:shadow-lg hover:bg-gray-50;
+}
+
+.czBannerSelectInput__label {
+  @apply text-white mb-1 opacity-0;
+}
+.czBannerSelectInput__label.show {
+  @apply opacity-100;
+}
+
+.czBannerSelectInput__icon {
+  @apply absolute 
+  bottom-3 
+  right-3 
+  text-gray-900;
+}
+
+.czBannerSelectInput__options {
+  @apply absolute 
+  bg-white 
+  rounded 
+  w-full 
+  max-h-[200px] 
+  overflow-scroll
+  shadow-2xl mt-1;
+}
+
+.czBannerSelectInput__option {
+  @apply py-1 px-2 cursor-pointer;
+}
+
+.czBannerSelectInput__option.default {
+  @apply text-gray-500;
+}
+
+.czBannerSelectInput__option.active {
+  @apply bg-primary-100;
+}

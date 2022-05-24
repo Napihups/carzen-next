@@ -1,14 +1,10 @@
-import { CzButton } from "@cz-ui/CzButton/CzButton";
-import { Listbox, Transition } from "@headlessui/react";
-import { FormGroup, FormLabel } from "@mui/material";
-import React, { Fragment, useState } from "react";
-import { IoCaretDown } from "react-icons/io5";
+import { CzSingleSelect } from "@cz-ui/CzSingleSelect/CzSingleSelect";
 
 type PriceRangeType = {
   values: number[];
   label: string;
 };
-const PRICE_RANGES: PriceRangeType[] = [
+const PriceRanges: PriceRangeType[] = [
   {
     values: [-1, -1],
     label: "Price Range",
@@ -68,56 +64,15 @@ const PRICE_RANGES: PriceRangeType[] = [
   },
 ];
 
-const _showLabel = (selected: string) => {
-  return selected !== PRICE_RANGES[0].label;
-};
-
+/** */
 export const CzPriceRangeSelect: React.FC = () => {
-  const [selected, setSelected] = useState<PriceRangeType>(PRICE_RANGES[0]);
-
   return (
-    <div className="czPriceRangeSelect">
-      <Listbox value={selected} onChange={setSelected}>
-        <Listbox.Button as={Fragment}>
-          <div>
-            <FormGroup>
-              <FormLabel className={`czPriceRangeSelect__label ${_showLabel(selected.label) ? "show" : ""}`}>
-                Price Range
-              </FormLabel>
-              <CzButton
-                className="czPriceRangeSelect__button"
-                fullWidth
-                color="inherit"
-                text={selected.label}
-                endIcon={<IoCaretDown size={16} />}
-              />
-            </FormGroup>
-          </div>
-        </Listbox.Button>
-
-        <Transition
-          enter="transition duration-100 ease-out"
-          enterFrom="transform scale-95 opacity-0"
-          enterTo="transform scale-100 opacity-100"
-          leave="transition duration-75 ease-out"
-          leaveFrom="transform scale-100 opacity-100"
-          leaveTo="transform scale-95 opacity-0"
-        >
-          <Listbox.Options className="czPriceRangeSelect__options">
-            {PRICE_RANGES.map((item, index) => (
-              <Listbox.Option
-                key={item.label}
-                value={item}
-                className={({ active }) =>
-                  `czPriceRangeSelect__option ${active ? "active" : ""} ${index === 0 ? "default" : ""}`
-                }
-              >
-                {item.label}
-              </Listbox.Option>
-            ))}
-          </Listbox.Options>
-        </Transition>
-      </Listbox>
-    </div>
+    <CzSingleSelect
+      data={PriceRanges}
+      label="Price Range"
+      renderItemText={(item: PriceRangeType) => item.label}
+      renderDisplay={(selected: PriceRangeType) => selected.label}
+      shouldShowLabel={(data: PriceRangeType[], selected) => Boolean(data[0].label !== selected.label)}
+    />
   );
 };
