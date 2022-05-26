@@ -5,7 +5,7 @@ import { CzSearchForm } from "@module/CzSearchForm/CzSearchForm";
 
 export const LandingTemplate: React.FC = () => {
   return (
-    <div className="czLanding">
+    <div data-testid="LandingTemplate" className="czLanding">
       <div className="czBanner">
         <div className="czBanner__blob">
           <CzCarBlob />

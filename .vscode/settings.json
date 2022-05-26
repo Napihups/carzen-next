@@ -5,7 +5,7 @@
   "editor.fontWeight": "100",
   "editor.fontFamily": "'Courier New', monospace",
   "workbench.colorCustomizations": {
-    "editor.background": "#111213"
+    // "editor.background": "#111213"
   }, 
   "[javascript]": {
     "editor.maxTokenizationLineLength": 2500,

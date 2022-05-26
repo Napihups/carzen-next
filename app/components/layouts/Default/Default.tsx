@@ -6,7 +6,7 @@ type DefaultProps = {
 };
 export const Default: React.FC<DefaultProps> = ({ children }) => {
   return (
-    <div className="czLayoutDefault">
+    <div data-testid="CzLayoutDefault" className="czLayoutDefault">
       <CzNavbar />
       <div className="czContainer czContent">{children}</div>
     </div>
