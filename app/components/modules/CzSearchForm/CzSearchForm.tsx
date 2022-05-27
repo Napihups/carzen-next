@@ -1,3 +1,4 @@
+import { FoucGuard } from "@common/FoucGuard";
 import { CzCarModelSearchBar } from "@element/CzCarModelSearchBar/CzCarModelSearchBar";
 import React from "react";
 import { CzAllSearchForm } from "./CzAllSearchForm";
@@ -11,15 +12,17 @@ import { CzUsedSearchForm } from "./CzUsedSearchForm";
 export const CzSearchForm: React.FC = () => {
   return (
     <CzSearchFormProvider>
-      <div className="czSearchFormContainer">
-        <CzSearchTabs />
-        <div className="czSearchForm">
-          <div className="czSearchBarContainer">
-            <CzCarModelSearchBar />
+      <FoucGuard targetId="CzSearchFormContainer">
+        <div className="czSearchFormContainer">
+          <CzSearchTabs />
+          <div className="czSearchForm">
+            <div className="czSearchBarContainer">
+              <CzCarModelSearchBar />
+            </div>
+            <CzSearchFormTemplate />
           </div>
-          <CzSearchFormTemplate />
         </div>
-      </div>
+      </FoucGuard>
     </CzSearchFormProvider>
   );
 };

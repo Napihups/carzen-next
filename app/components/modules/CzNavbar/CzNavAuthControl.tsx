@@ -1,5 +1,6 @@
 import React from "react";
 import { CzButton } from "@cz-ui/CzButton/CzButton";
+import { FoucGuard } from "@common/FoucGuard";
 
 export const CzNavAuthControl: React.FC = () => {
   const handleSignupClick = (ev: React.MouseEvent) => {
@@ -10,7 +11,7 @@ export const CzNavAuthControl: React.FC = () => {
   };
 
   return (
-    <>
+    <FoucGuard targetId="NavAuthControls">
       <CzButton
         onClick={handleSignupClick}
         variant="text"
@@ -27,6 +28,6 @@ export const CzNavAuthControl: React.FC = () => {
         text="Login"
         className="px-16"
       />
-    </>
+    </FoucGuard>
   );
 };
