@@ -40,7 +40,10 @@ describe("CzSearchForm Behaviour Test", () => {
     expect(tabItemUsed.classList.contains("active")).toBeTruthy();
   });
 
-  it("Search autocomplete to display the dropdown panel when user typing atleast 1 char", async () => {
-    /** todo */
+  it("Static display for main search bar autocomplete should be correct", async () => {
+    render(<CzSearchForm />);
+
+    const searchBar = await screen.findByPlaceholderText(fixtures.search_form.input_placeholders.car_modal);
+    expect(searchBar).toBeInTheDocument();
   });
 });
