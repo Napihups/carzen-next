@@ -24,6 +24,7 @@ export const CzSearchTabs: React.FC = () => {
         onClick={() => {
           setCurrentType(SearchType.NEW);
         }}
+        data-testid={`czSearchTabs__tab-${fixtures.search_form.main_filters.new}`}
         variant="outlined"
         color="inherit"
         text={fixtures.search_form.main_filters.new}
@@ -34,6 +35,7 @@ export const CzSearchTabs: React.FC = () => {
         onClick={() => {
           setCurrentType(SearchType.USED);
         }}
+        data-testid={`czSearchTabs__tab-${fixtures.search_form.main_filters.used}`}
         variant="outlined"
         color="inherit"
         text={fixtures.search_form.main_filters.used}
@@ -43,6 +45,7 @@ export const CzSearchTabs: React.FC = () => {
         onClick={() => {
           setCurrentType(SearchType.SUBSCRIPTION);
         }}
+        data-testid={`czSearchTabs__tab-${fixtures.search_form.main_filters.subs}`}
         variant="outlined"
         color="inherit"
         text={fixtures.search_form.main_filters.subs}
@@ -52,6 +55,7 @@ export const CzSearchTabs: React.FC = () => {
         onClick={() => {
           setCurrentType(SearchType.ALL);
         }}
+        data-testid={`czSearchTabs__tab-${fixtures.search_form.main_filters.all}`}
         variant="outlined"
         color="inherit"
         text={fixtures.search_form.main_filters.all}

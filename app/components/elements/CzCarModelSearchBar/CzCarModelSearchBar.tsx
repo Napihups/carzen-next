@@ -51,6 +51,7 @@ export const CzCarModelSearchBar: React.FC = () => {
       >
         <CzTextField
           ref={searchInputRef}
+          data-testid="czSearchbar"
           className="czCarModelSearchBar__input"
           onBlur={() => {
             setOpen(false);
