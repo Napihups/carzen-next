@@ -1,12 +1,18 @@
 import type { NextPage } from "next";
 import { Default } from "@layout/Default/Default";
 import { LandingTemplate } from "@template/LandingTemplate";
+import Head from "next/head";
 
 const Landing: NextPage = () => {
   return (
-    <Default>
-      <LandingTemplate />
-    </Default>
+    <>
+      <Head>
+        <title>Carzen.sg</title>
+      </Head>
+      <Default>
+        <LandingTemplate />
+      </Default>
+    </>
   );
 };
 

@@ -9,7 +9,7 @@ export const CzNavbar: React.FC = () => {
     <div className="czNavbar">
       <div className="czContainer">
         <div className="czNavbar__top">
-          <div className="czNavbar__drawerSection">
+          <div data-testid="czNavbar__drawerSection" className="czNavbar__drawerSection">
             <CzNavDrawer />
           </div>
           <div className="czNavbar__logo">

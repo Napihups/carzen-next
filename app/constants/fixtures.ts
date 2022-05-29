@@ -1,4 +1,8 @@
 export const fixtures = {
+  nav_auth_controls: {
+    signup_button_text: "Sign up",
+    login_button_text: "Login",
+  },
   nav_menu: {
     new_cars: "New Cars",
     used_cars: "Used Cars",

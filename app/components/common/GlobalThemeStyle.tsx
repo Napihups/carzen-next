@@ -21,10 +21,10 @@ const theme = createTheme({
   },
 });
 
-type GlobaThemeStyleProps = {
+type GlobalThemeStyleProps = {
   children: React.ReactNode;
 };
-export const GlobaThemeStyle: React.FC<GlobaThemeStyleProps> = ({ children }) => {
+export const GlobalThemeStyle: React.FC<GlobalThemeStyleProps> = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

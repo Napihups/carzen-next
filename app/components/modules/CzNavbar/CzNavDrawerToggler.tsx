@@ -8,7 +8,7 @@ type CzNavDrawerTogglerProps = {
 
 export const CzNavDrawerToggler: React.FC<CzNavDrawerTogglerProps> = ({ onToggle }) => {
   return (
-    <CzIconButton onClick={onToggle}>
+    <CzIconButton data-testid="czNavbar__toggler" onClick={onToggle}>
       <IoMenuSharp className="czNavbar__toggler" />
     </CzIconButton>
   );

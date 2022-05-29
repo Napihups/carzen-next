@@ -13,7 +13,7 @@ export const CzNavDrawer: React.FC = () => {
         }}
       />
       <CzNavDrawerToggler
-        onToggle={(e) => {
+        onToggle={() => {
           setOpenDrawer(true);
         }}
       />
