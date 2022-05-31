@@ -2,12 +2,12 @@ import { CzButton } from "@cz-ui/CzButton/CzButton";
 import { CzInstRange } from "@element/CzInstRange/CzInstRange";
 import { CzPriceRangeSelect } from "@element/CzPriceRangeSelect/CzPriceRangeSelect";
 import { CzVehicleTypeSelect } from "@element/CzVehicleTypeSelect/CzVehicleTypeSelect";
-import React from "react";
+import React, { Fragment } from "react";
 import { IoSearchOutline } from "react-icons/io5";
 
 export const CzAllSearchForm: React.FC = () => {
   return (
-    <div data-testid="CzAllSearchForm">
+    <Fragment data-testid="CzAllSearchForm">
       <div className="flex flex-row items-center w-full py-2 gap-2 z-40">
         <CzVehicleTypeSelect />
         <CzPriceRangeSelect />
@@ -23,6 +23,6 @@ export const CzAllSearchForm: React.FC = () => {
           endIcon={<IoSearchOutline />}
         />
       </div>
-    </div>
+    </Fragment>
   );
 };
