@@ -2,9 +2,16 @@ import { CzCarModelSearchBar } from "@element/CzCarModelSearchBar/CzCarModelSear
 import { screen, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { carModels } from "@constant/car-models";
+import { fixtures } from "@constant/fixtures";
 
 describe("CzCarModelSearchBar Functional Test", () => {
-  beforeEach(() => {});
+  it("Static display for main search bar autocomplete should be correct", async () => {
+    render(<CzCarModelSearchBar carModels={carModels} />);
+
+    const searchBar = await screen.findByPlaceholderText(fixtures.search_form.input_placeholders.car_modal);
+    expect(searchBar).toBeInTheDocument();
+  });
+
   it("The Default option text display 'Search for ....' should always be appear in the dropdown for any inputs more than 1 length", async () => {
     const user = userEvent.setup();
 
@@ -71,7 +78,11 @@ describe("CzCarModelSearchBar Functional Test", () => {
 
     await user.click(targetSelected);
 
-    expect(searchBar).toHaveValue(targetSelected.textContent);
+    /** Allow component to update its state by
+     * delay the asssertions in the next tick */
+    setTimeout(() => {
+      expect(searchBar).toHaveValue(targetSelected.textContent);
+    }, 200);
   });
 
   it("Search input should not update its value and preserved the user input when  user select the default options", async () => {

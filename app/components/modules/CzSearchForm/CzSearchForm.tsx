@@ -1,14 +1,10 @@
 import { FoucGuard } from "@common/FoucGuard";
 import { CzCarModelSearchBar } from "@element/CzCarModelSearchBar/CzCarModelSearchBar";
 import React from "react";
-import { CzAllSearchForm } from "./CzAllSearchForm";
-import { CzNewSearchForm } from "./CzNewSearchForm";
-import { SearchType } from "./CzSearchForm.types";
-import { CzSearchFormProvider, useCzSearchForm } from "./CzSearchFormProvider";
+import { CzSearchFormProvider } from "./CzSearchFormProvider";
 import { CzSearchTabs } from "./CzSearchTabs";
-import { CzSubsSearchForm } from "./CzSubsSearchForm";
-import { CzUsedSearchForm } from "./CzUsedSearchForm";
 import { carModels } from "@constant/car-models";
+import { CzSearchFormTemplate } from "./CzSearchFormTemplate";
 
 export const CzSearchForm: React.FC = () => {
   return (
@@ -26,21 +22,4 @@ export const CzSearchForm: React.FC = () => {
       </FoucGuard>
     </CzSearchFormProvider>
   );
-};
-
-const CzSearchFormTemplate: React.FC = () => {
-  const { currentType } = useCzSearchForm();
-
-  switch (currentType) {
-    case SearchType.NEW:
-      return <CzNewSearchForm />;
-    case SearchType.USED:
-      return <CzUsedSearchForm />;
-    case SearchType.SUBSCRIPTION:
-      return <CzSubsSearchForm />;
-    case SearchType.ALL:
-      return <CzAllSearchForm />;
-    default:
-      return null;
-  }
 };

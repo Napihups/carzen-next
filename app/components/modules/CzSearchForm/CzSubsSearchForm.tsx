@@ -6,7 +6,7 @@ import { IoSearchOutline } from "react-icons/io5";
 
 export const CzSubsSearchForm: React.FC = () => {
   return (
-    <>
+    <div data-testid="CzSubsSearchForm">
       <div className="flex flex-row items-center w-full py-2 gap-2 z-40">
         <CzVehicleTypeSelect />
         <CzInstRange />
@@ -19,6 +19,6 @@ export const CzSubsSearchForm: React.FC = () => {
           endIcon={<IoSearchOutline />}
         />
       </div>
-    </>
+    </div>
   );
 };
