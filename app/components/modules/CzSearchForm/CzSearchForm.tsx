@@ -8,6 +8,7 @@ import { CzSearchFormProvider, useCzSearchForm } from "./CzSearchFormProvider";
 import { CzSearchTabs } from "./CzSearchTabs";
 import { CzSubsSearchForm } from "./CzSubsSearchForm";
 import { CzUsedSearchForm } from "./CzUsedSearchForm";
+import { carModels } from "@constant/car-models";
 
 export const CzSearchForm: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ export const CzSearchForm: React.FC = () => {
           <CzSearchTabs />
           <div className="czSearchForm">
             <div className="czSearchBarContainer">
-              <CzCarModelSearchBar />
+              <CzCarModelSearchBar carModels={carModels} />
             </div>
             <CzSearchFormTemplate />
           </div>

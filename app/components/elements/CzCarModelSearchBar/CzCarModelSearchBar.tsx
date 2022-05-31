@@ -6,7 +6,10 @@ import { useCarModelAutocompleteSearch } from "@hook/useCarModelAutocompleteSear
 import React, { Fragment, useRef, useState } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 
-export const CzCarModelSearchBar: React.FC = () => {
+type CzCarModelSearchBarProps = {
+  carModels: CarModelSuggestionModel[];
+};
+export const CzCarModelSearchBar: React.FC<CzCarModelSearchBarProps> = ({ carModels }) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -16,7 +19,7 @@ export const CzCarModelSearchBar: React.FC = () => {
 
   const [stopFetch, setStopFetch] = useState<boolean>(false);
 
-  const { suggestion } = useCarModelAutocompleteSearch(inputValue, stopFetch);
+  const { suggestion } = useCarModelAutocompleteSearch(carModels, inputValue, stopFetch);
 
   const handleInputOnchange = (value: string) => {
     setInputValue(value);
@@ -50,8 +53,9 @@ export const CzCarModelSearchBar: React.FC = () => {
         displayValue={() => inputValue ?? ""}
       >
         <CzTextField
+          aria-label="Car Model or Make Search input"
           ref={searchInputRef}
-          data-testid="czSearchbar"
+          data-testid="CzCarModelSearchBar-input"
           className="czCarModelSearchBar__input"
           onBlur={() => {
             setOpen(false);
@@ -66,6 +70,7 @@ export const CzCarModelSearchBar: React.FC = () => {
 
       <Transition
         show={open}
+        data-testid="CzCarModelSearchBar-dropdown"
         enter="transition duration-150 ease-out"
         enterFrom="transform scale-95 opacity-0"
         enterTo="transform scale-100 opacity-100"
@@ -75,6 +80,7 @@ export const CzCarModelSearchBar: React.FC = () => {
       >
         <Combobox.Options className="czCarModelSearchBar__suggestCard" static>
           <Combobox.Option
+            data-testid="CzCarModelSearchBar-default-option"
             key={90}
             value={{ id: "searchfor", text: "Search for" }}
             className={({ active }) => `czCarModelSearchBar__item ${active ? "active" : ""}`}
@@ -83,6 +89,7 @@ export const CzCarModelSearchBar: React.FC = () => {
           </Combobox.Option>
           {suggestion.length === 0 ? (
             <Combobox.Option
+              data-testid={`CzCarModelSearchBar-spinner`}
               key={0}
               value={""}
               disabled={true}
@@ -94,6 +101,7 @@ export const CzCarModelSearchBar: React.FC = () => {
             <>
               {suggestion.map((carModel: CarModelSuggestionModel) => (
                 <Combobox.Option
+                  data-testid="CzCarModelSearchBar-option"
                   key={carModel.id}
                   value={carModel}
                   disabled={carModel.id === "noresult"}

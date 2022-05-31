@@ -1,20 +1,16 @@
 import { CarModelSuggestionModel } from "@czTypes/global.type";
 import { useEffect, useState } from "react";
-import faker from "@faker-js/faker";
 import lodash from "lodash";
-
-const carModels: CarModelSuggestionModel[] = new Array(300).fill(0).map(() => {
-  return {
-    id: faker.database.mongodbObjectId(),
-    text: `${faker.vehicle.manufacturer()} ${faker.vehicle.model()}`,
-  };
-});
 
 /**
  *
  * @param queryString
  */
-export const useCarModelAutocompleteSearch = (queryString: string | null, stopFetch: boolean) => {
+export const useCarModelAutocompleteSearch = (
+  options: CarModelSuggestionModel[],
+  queryString: string | null,
+  stopFetch: boolean
+) => {
   /** States */
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<null | Error | string>(null);
@@ -28,7 +24,7 @@ export const useCarModelAutocompleteSearch = (queryString: string | null, stopFe
       setTimeout(() => {
         const resultList: CarModelSuggestionModel[] = [];
 
-        carModels.forEach((item: CarModelSuggestionModel) => {
+        options.forEach((item: CarModelSuggestionModel) => {
           if (lodash.includes(item.text.toLowerCase(), queryString.toLowerCase())) {
             resultList.push(item);
           }
@@ -45,7 +41,7 @@ export const useCarModelAutocompleteSearch = (queryString: string | null, stopFe
         setIsLoading(false);
       }, 0);
     }
-  }, [queryString, stopFetch]);
+  }, [options, queryString, stopFetch]);
 
   return { isLoading, error, suggestion };
 };
